@@ -73,6 +73,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap APU__2___2__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("APU__2___2_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap APU_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("APU-removebg-preview", resourceCulture);
@@ -86,6 +96,47 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap APU_removebg_preview__1_ {
             get {
                 object obj = ResourceManager.GetObject("APU-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap illustration_of_human_icon_user_symbol_icon_modern_design_on_blank_background_free_vector {
+            get {
+                object obj = ResourceManager.GetObject("illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-fre" +
+                        "e-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_1603366615917_1fa6dad5c4fa {
+            get {
+                object obj = ResourceManager.GetObject("photo-1603366615917-1fa6dad5c4fa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shopping_cart {
+            get {
+                object obj = ResourceManager.GetObject("shopping-cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shopping_cart1 {
+            get {
+                object obj = ResourceManager.GetObject("shopping-cart1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

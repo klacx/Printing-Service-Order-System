@@ -1,0 +1,6 @@
+﻿INSERT INTO [dbo].[userProfile] ([username], [password], [permission], [DoB], [firstName], [lastName], [phone], [intake]) VALUES (N'1', N'1           ', N'admin     ', NULL, NULL, NULL, NULL, NULL)
+INSERT INTO [dbo].[userProfile] ([username], [password], [permission], [DoB], [firstName], [lastName], [phone], [intake]) VALUES (N'2', N'2           ', N'student   ', NULL, NULL, NULL, NULL, NULL)
+INSERT INTO [dbo].[userProfile] ([username], [password], [permission], [DoB], [firstName], [lastName], [phone], [intake]) VALUES (N'admin', N'admin       ', N'admin     ', NULL, NULL, NULL, NULL, NULL)
+INSERT INTO [dbo].[userProfile] ([username], [password], [permission], [DoB], [firstName], [lastName], [phone], [intake]) VALUES (N'manager', N'manager     ', N'manager   ', NULL, NULL, NULL, NULL, NULL)
+INSERT INTO [dbo].[userProfile] ([username], [password], [permission], [DoB], [firstName], [lastName], [phone], [intake]) VALUES (N'student', N'student     ', N'student   ', NULL, NULL, NULL, NULL, NULL)
+INSERT INTO [dbo].[userProfile] ([username], [password], [permission], [DoB], [firstName], [lastName], [phone], [intake]) VALUES (N'worker', N'worker      ', N'worker    ', NULL, NULL, NULL, NULL, NULL)
