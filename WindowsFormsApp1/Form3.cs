@@ -22,44 +22,23 @@ namespace WindowsFormsApp1
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
-
+            userPanel.Visible = false;
         }
 
         private void roundPictureBox1_Click(object sender, EventArgs e)
         {
-            timer1.Start();
-        }
-
-        bool expand = false;
-        private void timer1_Tick_1(object sender, EventArgs e)
-        {
-            if (expand == false)
-            {
-                UserDropDown.Height += 15;
-                if (UserDropDown.Height >= UserDropDown.MaximumSize.Height)
-                {
-                    timer1.Stop();
-                    expand = true;
-                }
-            }
-            else
-            {
-                UserDropDown.Height -= 15;
-                if (UserDropDown.Height <= UserDropDown.MinimumSize.Height)
-                {
-                    timer1.Stop();
-                    expand = false;
-                }
-            }
+            if (userPanel.Visible == false) { userPanel.Visible = true; }
+            else if (userPanel.Visible == true) { userPanel.Visible = false; }
         }
 
         private void ProfileBtn_Click(object sender, EventArgs e)
         {
-
+            userPanel.Visible = false;
         }
 
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
+            userPanel.Visible = false;
             this.Hide();
             LoginForm Login = new LoginForm();
             Login.Closed += (s, args) => this.Close();

@@ -32,8 +32,8 @@ namespace WindowsFormsApp1
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Documents\asm.mdf;Integrated Security=True;Connect Timeout=30");
-            SqlDataAdapter SDA = new SqlDataAdapter("SELECT permission FROM userProfile WHERE username='" + usernameTextBox.Text + "' AND password='" + passwordTextBox.Text + "'", con);
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Documents\demoDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlDataAdapter SDA = new SqlDataAdapter("SELECT roles FROM _User WHERE user_id='" + usernameTextBox.Text + "' AND password='" + passwordTextBox.Text + "'", con);
             DataTable DT = new DataTable();
             SDA.Fill(DT);
             if (DT.Rows.Count == 0)
