@@ -9,15 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using WindowsFormsApp1.Student_UserControl;
 
 namespace WindowsFormsApp1
 {
     public partial class StudentForm : KryptonForm
 
     {
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
         public StudentForm()
         {
             InitializeComponent();
+
+            object sender = productBtn; 
+            EventArgs e = EventArgs.Empty; 
+            ProductBtn_Click(sender, e);
         }
 
         private void StudentForm_Load(object sender, EventArgs e)
@@ -43,6 +55,29 @@ namespace WindowsFormsApp1
             LoginForm Login = new LoginForm();
             Login.Closed += (s, args) => this.Close();
             Login.Show();
+        }
+
+        private void ProductBtn_Click(object sender, EventArgs e)
+        {
+            ProductPage PP = new ProductPage();
+            addUserControl(PP);
+        }
+
+        private void InProgressBtn_Click(object sender, EventArgs e)
+        {
+            InProgressPage IPP = new InProgressPage();
+            addUserControl(IPP);
+        }
+
+        private void HistoryBtn_Click(object sender, EventArgs e)
+        {
+            HistoryPage HP = new HistoryPage();
+            addUserControl(HP);
+        }
+
+        private void userPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
