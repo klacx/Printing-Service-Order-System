@@ -8,14 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Student_UserControl;
 
 namespace WindowsFormsApp1
 {
     public partial class AdminForm : KryptonForm
     {
-        public AdminForm()
+        public string userID;
+        public AdminForm(string user_id)
         {
             InitializeComponent();
+
+            userID = user_id;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -61,12 +65,21 @@ namespace WindowsFormsApp1
 
         private void ProfileBtn_Click(object sender, EventArgs e)
         {
+            Profile Pf = new Profile(userID);
+            addUserControl(Pf);
             userPanel.Visible = false;
         }
 
         private void AddUserBtn_Click(object sender, EventArgs e)
         {
 
+        }
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(userControl);
+            userControl.BringToFront();
         }
     }
 }

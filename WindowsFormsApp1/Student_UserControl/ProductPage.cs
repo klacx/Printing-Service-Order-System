@@ -32,7 +32,7 @@ namespace WindowsFormsApp1.Student_UserControl
 
             ClassBLL objBLL = new ClassBLL();
 
-            DataTable dt = objBLL.getProductItems();
+            DataTable dt = objBLL.getProductItems("product", "");
 
             if(dt != null ) 
             {

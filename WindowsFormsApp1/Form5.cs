@@ -8,14 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Student_UserControl;
 
 namespace WindowsFormsApp1
 {
     public partial class ManagerForm : KryptonForm
     {
-        public ManagerForm()
+        public string userID;
+        public ManagerForm(string user_id)
         {
             InitializeComponent();
+
+            userID = user_id;
         }
 
         private void ManagerForm_Load(object sender, EventArgs e)
@@ -31,6 +35,8 @@ namespace WindowsFormsApp1
 
         private void ProfileBtn_Click(object sender, EventArgs e)
         {
+            Profile Pf = new Profile(userID);
+            addUserControl(Pf);
             userPanel.Visible = false;
         }
 
@@ -41,6 +47,13 @@ namespace WindowsFormsApp1
             LoginForm Login = new LoginForm();
             Login.Closed += (s, args) => this.Close();
             Login.Show();
+        }
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(userControl);
+            userControl.BringToFront();
         }
     }
 }

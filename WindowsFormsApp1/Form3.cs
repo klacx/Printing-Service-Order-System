@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
     public partial class StudentForm : KryptonForm
 
     {
+        public string userID;
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -23,8 +24,9 @@ namespace WindowsFormsApp1
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
-        public StudentForm()
+        public StudentForm(string user_id)
         {
+            userID = user_id;
             InitializeComponent();
 
             object sender = productBtn; 
@@ -45,6 +47,8 @@ namespace WindowsFormsApp1
 
         private void ProfileBtn_Click(object sender, EventArgs e)
         {
+            Profile Pf = new Profile(userID);
+            addUserControl(Pf);
             userPanel.Visible = false;
         }
 

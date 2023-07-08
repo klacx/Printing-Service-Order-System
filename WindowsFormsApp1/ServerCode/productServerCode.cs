@@ -15,7 +15,7 @@ namespace WindowsFormsApp1.ServerCode
     }
     class classDAL
     {
-        public DataTable ReadItemsTable()
+        public DataTable ReadItemsTable(string tableName, string condition)
         { 
             Connection con = new Connection();
             if (ConnectionState.Closed == con.connect.State) 
@@ -25,7 +25,7 @@ namespace WindowsFormsApp1.ServerCode
 
             try 
             { 
-                using (SqlDataAdapter SDA = new SqlDataAdapter("SELECT * FROM Product", con.connect)) 
+                using (SqlDataAdapter SDA = new SqlDataAdapter("SELECT * FROM " + tableName + condition, con.connect)) 
                 {
                     DataTable DT = new DataTable();
                     SDA.Fill(DT);
@@ -39,15 +39,15 @@ namespace WindowsFormsApp1.ServerCode
             
         }
     }
-
+    
     class ClassBLL
     {
-        public DataTable getProductItems()
+        public DataTable getProductItems(string tableName, string condition)
         {
             try
             {
                 classDAL objDAL = new classDAL();
-                return objDAL.ReadItemsTable();
+                return objDAL.ReadItemsTable(tableName, condition);
             }
             catch (Exception e)
             {

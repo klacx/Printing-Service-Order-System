@@ -39,6 +39,7 @@
             this.userPanel = new System.Windows.Forms.Panel();
             this.LogOutBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.ProfileBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.panelContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -295,6 +296,14 @@
             this.ProfileBtn.Values.Text = "Profile";
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click_1);
             // 
+            // panelContainer
+            // 
+            this.panelContainer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelContainer.Location = new System.Drawing.Point(0, 54);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1260, 638);
+            this.panelContainer.TabIndex = 11;
+            // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +313,7 @@
             this.Controls.Add(this.roundPictureBox1);
             this.Controls.Add(this.userPanel);
             this.Controls.Add(this.kryptonPanel1);
+            this.Controls.Add(this.panelContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "WorkerForm";
@@ -332,5 +342,6 @@
         private System.Windows.Forms.Panel userPanel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton LogOutBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton ProfileBtn;
+        private System.Windows.Forms.Panel panelContainer;
     }
 }

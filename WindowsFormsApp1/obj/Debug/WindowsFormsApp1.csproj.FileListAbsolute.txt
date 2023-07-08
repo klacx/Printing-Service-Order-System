@@ -24,3 +24,4 @@ C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFor
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Student_UserControl.InProgressPage.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Student_UserControl.ProductPage.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Product_Page.productLayout.resources
+C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Student_UserControl.Profile.resources

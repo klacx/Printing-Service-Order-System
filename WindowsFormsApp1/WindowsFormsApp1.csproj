@@ -120,6 +120,12 @@
     <Compile Include="Student_UserControl\ProductPage.Designer.cs">
       <DependentUpon>ProductPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student_UserControl\Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student_UserControl\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dynamic Panel\Product Page\productLayout.resx">
       <DependentUpon>productLayout.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student_UserControl\ProductPage.resx">
       <DependentUpon>ProductPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_UserControl\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

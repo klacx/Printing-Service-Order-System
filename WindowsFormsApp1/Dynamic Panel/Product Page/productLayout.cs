@@ -27,15 +27,11 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
         private string _price;
         private string _specialPrice;
 
-        [Category("Layout")]
-
         public Image Icon
         {
             get { return _icon; }
             set { _icon = value; pb_icon.Image = value; }
         }
-
-        [Category("Layout")]
 
         public string Title
         {
