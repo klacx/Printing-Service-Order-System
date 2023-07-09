@@ -103,10 +103,30 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap defaultAvatar {
+            get {
+                object obj = ResourceManager.GetObject("defaultAvatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap illustration_of_human_icon_user_symbol_icon_modern_design_on_blank_background_free_vector {
             get {
                 object obj = ResourceManager.GetObject("illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-fre" +
                         "e-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoImage {
+            get {
+                object obj = ResourceManager.GetObject("NoImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

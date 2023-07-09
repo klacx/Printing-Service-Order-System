@@ -67,19 +67,24 @@ namespace WindowsFormsApp1
             addUserControl(PP);
         }
 
-        private void InProgressBtn_Click(object sender, EventArgs e)
+        private void ProcessingBtn_Click(object sender, EventArgs e)
         {
-            InProgressPage IPP = new InProgressPage();
-            addUserControl(IPP);
-        }
-
-        private void HistoryBtn_Click(object sender, EventArgs e)
-        {
-            HistoryPage HP = new HistoryPage();
+            ProcessingPage HP = new ProcessingPage();
             addUserControl(HP);
         }
 
         private void userPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cartBtn_Click(object sender, EventArgs e)
+        {
+            ShoppingCart cart = new ShoppingCart();
+            addUserControl(cart);
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
 
         }

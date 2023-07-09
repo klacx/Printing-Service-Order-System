@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Dynamic_Panel.Product_Page;
+using WindowsFormsApp1.Properties;
 using WindowsFormsApp1.ServerCode;
 
 namespace WindowsFormsApp1.Student_UserControl
@@ -51,12 +52,12 @@ namespace WindowsFormsApp1.Student_UserControl
                                 MemoryStream ms = new MemoryStream((byte[])row["product_img"]);
                                 itemList[i].Icon = new Bitmap(ms);
                             }
-                            catch {  }
+                            catch { itemList[i].Icon = Resources.NoImage; }
 
 
                             itemList[i].Title = row["product_name"].ToString();
-                            itemList[i].Price = row["price"].ToString() + "/per unit";
-                            itemList[i].SpecialPrice = row["special_price"].ToString() + "/per 100 unit";
+                            itemList[i].Price = "RM " + row["price"].ToString() + "/per unit";
+                            itemList[i].SpecialPrice = "RM " + row["special_price"].ToString() + "/per 100 unit";
                             if(row["price"].ToString().Replace(" ", String.Empty) == row["special_price"].ToString().Replace(" ", String.Empty))
                             { itemList[i].lbl_specialPrice.Visible = false; }
 

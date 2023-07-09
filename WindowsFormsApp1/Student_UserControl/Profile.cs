@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Dynamic_Panel.Product_Page;
+using WindowsFormsApp1.Properties;
 using WindowsFormsApp1.ServerCode;
 
 namespace WindowsFormsApp1.Student_UserControl
@@ -38,7 +39,7 @@ namespace WindowsFormsApp1.Student_UserControl
                             MemoryStream ms = new MemoryStream((byte[])row["product_img"]);
                             userIcon.Image = new Bitmap(ms);
                         }
-                        catch { }
+                        catch { userIcon.Image = Resources.defaultAvatar; }
 
                         try { firstNameTextBox.Text = row["first_name"].ToString(); }
                         catch { }

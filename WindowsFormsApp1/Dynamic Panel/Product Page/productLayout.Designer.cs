@@ -31,8 +31,8 @@
             this.lbl_title = new System.Windows.Forms.Label();
             this.lbl_price = new System.Windows.Forms.Label();
             this.lbl_specialPrice = new System.Windows.Forms.Label();
-            this.pb_icon = new System.Windows.Forms.PictureBox();
             this.addToCartBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.pb_icon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_icon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,18 +40,20 @@
             // 
             this.lbl_title.AutoSize = true;
             this.lbl_title.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title.Location = new System.Drawing.Point(21, 242);
+            this.lbl_title.Location = new System.Drawing.Point(13, 242);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(57, 21);
             this.lbl_title.TabIndex = 0;
             this.lbl_title.Text = "label1";
             this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_title.Click += new System.EventHandler(this.lbl_title_Click);
             // 
             // lbl_price
             // 
             this.lbl_price.AutoSize = true;
             this.lbl_price.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_price.Location = new System.Drawing.Point(21, 272);
+            this.lbl_price.ForeColor = System.Drawing.Color.Crimson;
+            this.lbl_price.Location = new System.Drawing.Point(13, 272);
             this.lbl_price.Name = "lbl_price";
             this.lbl_price.Size = new System.Drawing.Size(57, 21);
             this.lbl_price.TabIndex = 1;
@@ -62,21 +64,13 @@
             // 
             this.lbl_specialPrice.AutoSize = true;
             this.lbl_specialPrice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_specialPrice.Location = new System.Drawing.Point(21, 302);
+            this.lbl_specialPrice.ForeColor = System.Drawing.Color.Crimson;
+            this.lbl_specialPrice.Location = new System.Drawing.Point(13, 302);
             this.lbl_specialPrice.Name = "lbl_specialPrice";
             this.lbl_specialPrice.Size = new System.Drawing.Size(57, 21);
             this.lbl_specialPrice.TabIndex = 3;
             this.lbl_specialPrice.Text = "label3";
             this.lbl_specialPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pb_icon
-            // 
-            this.pb_icon.Location = new System.Drawing.Point(25, 25);
-            this.pb_icon.Name = "pb_icon";
-            this.pb_icon.Size = new System.Drawing.Size(200, 200);
-            this.pb_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb_icon.TabIndex = 4;
-            this.pb_icon.TabStop = false;
             // 
             // addToCartBtn
             // 
@@ -135,6 +129,15 @@
             this.addToCartBtn.TabIndex = 5;
             this.addToCartBtn.Values.Text = "Add To Cart";
             this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
+            // 
+            // pb_icon
+            // 
+            this.pb_icon.Location = new System.Drawing.Point(25, 25);
+            this.pb_icon.Name = "pb_icon";
+            this.pb_icon.Size = new System.Drawing.Size(200, 200);
+            this.pb_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_icon.TabIndex = 4;
+            this.pb_icon.TabStop = false;
             // 
             // productLayout
             // 

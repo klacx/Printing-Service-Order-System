@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Student_UserControl
 {
-    partial class HistoryPage
+    partial class ShoppingCart
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,11 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // HistoryPage
+            // ShoppingCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "HistoryPage";
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Name = "ShoppingCart";
             this.Size = new System.Drawing.Size(1260, 530);
             this.ResumeLayout(false);
 

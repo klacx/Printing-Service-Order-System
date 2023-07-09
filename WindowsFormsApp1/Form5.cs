@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Student_UserControl;
 
-namespace WindowsFormsApp1
-{
+namespace WindowsFormsApp1 
+{   
     public partial class ManagerForm : KryptonForm
     {
         public string userID;

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Student_UserControl
+namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 {
-    public partial class HistoryPage : UserControl
+    public partial class UserControl1 : UserControl
     {
-        public HistoryPage()
+        public UserControl1()
         {
             InitializeComponent();
         }

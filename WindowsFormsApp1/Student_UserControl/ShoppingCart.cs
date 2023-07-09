@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Student_UserControl
 {
-    public partial class InProgressPage : UserControl
+    public partial class ShoppingCart : UserControl
     {
-        public InProgressPage()
+        public ShoppingCart()
         {
             InitializeComponent();
         }

@@ -20,8 +20,9 @@ C:\Users\User\Source\Repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFor
 C:\Users\User\Source\Repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\User\Source\Repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\User\Source\Repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Student_UserControl.HistoryPage.resources
-C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Student_UserControl.InProgressPage.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Student_UserControl.ProductPage.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Product_Page.productLayout.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Student_UserControl.Profile.resources
+C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Student_UserControl.ProcessingPage.resources
+C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Student_UserControl.ShoppingCart.resources
+C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Product_Page.cartItemLayout.resources

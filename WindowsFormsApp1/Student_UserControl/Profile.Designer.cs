@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
-            this.userIcon = new WindowsFormsApp1.RoundPictureBox();
             this.firstNameTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,24 +46,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.addToCartBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
+            this.userIcon = new WindowsFormsApp1.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.genderTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             this.SuspendLayout();
-            // 
-            // userIcon
-            // 
-            this.userIcon.Image = global::WindowsFormsApp1.Properties.Resources.photo_1603366615917_1fa6dad5c4fa;
-            this.userIcon.Location = new System.Drawing.Point(297, 63);
-            this.userIcon.Name = "userIcon";
-            this.userIcon.Size = new System.Drawing.Size(198, 186);
-            this.userIcon.TabIndex = 0;
-            this.userIcon.TabStop = false;
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(539, 69);
+            this.firstNameTextBox.Location = new System.Drawing.Point(719, 85);
+            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(168, 38);
+            this.firstNameTextBox.Size = new System.Drawing.Size(224, 38);
             this.firstNameTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
             this.firstNameTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -80,7 +71,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(535, 46);
+            this.label1.Location = new System.Drawing.Point(713, 57);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 2;
@@ -90,7 +82,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(781, 46);
+            this.label2.Location = new System.Drawing.Point(1041, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 4;
@@ -98,9 +91,10 @@
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(785, 69);
+            this.lastNameTextBox.Location = new System.Drawing.Point(1047, 85);
+            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(168, 38);
+            this.lastNameTextBox.Size = new System.Drawing.Size(224, 38);
             this.lastNameTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
             this.lastNameTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -115,7 +109,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(535, 346);
+            this.label3.Location = new System.Drawing.Point(713, 426);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 6;
@@ -123,9 +118,10 @@
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(539, 369);
+            this.emailTextBox.Location = new System.Drawing.Point(719, 454);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(414, 38);
+            this.emailTextBox.Size = new System.Drawing.Size(552, 38);
             this.emailTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
             this.emailTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -138,9 +134,10 @@
             // 
             // phoneNumberTextBox
             // 
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(539, 169);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(719, 208);
+            this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(168, 38);
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(224, 38);
             this.phoneNumberTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
             this.phoneNumberTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -154,11 +151,12 @@
             // dobTimePicker
             // 
             this.dobTimePicker.Checked = false;
-            this.dobTimePicker.Location = new System.Drawing.Point(539, 269);
+            this.dobTimePicker.Location = new System.Drawing.Point(719, 331);
+            this.dobTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dobTimePicker.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dobTimePicker.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dobTimePicker.Name = "dobTimePicker";
-            this.dobTimePicker.Size = new System.Drawing.Size(414, 36);
+            this.dobTimePicker.Size = new System.Drawing.Size(552, 36);
             this.dobTimePicker.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
             this.dobTimePicker.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -167,7 +165,6 @@
             this.dobTimePicker.StateCommon.Content.Color1 = System.Drawing.Color.DimGray;
             this.dobTimePicker.StateCommon.Content.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dobTimePicker.TabIndex = 9;
-            this.dobTimePicker.ValueNullable = ((object)(resources.GetObject("dobTimePicker.ValueNullable")));
             // 
             // genderTextBox
             // 
@@ -176,10 +173,11 @@
             "male",
             "female",
             "other"});
-            this.genderTextBox.Location = new System.Drawing.Point(785, 169);
-            this.genderTextBox.MinimumSize = new System.Drawing.Size(168, 38);
+            this.genderTextBox.Location = new System.Drawing.Point(1047, 208);
+            this.genderTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.genderTextBox.MinimumSize = new System.Drawing.Size(224, 38);
             this.genderTextBox.Name = "genderTextBox";
-            this.genderTextBox.Size = new System.Drawing.Size(168, 38);
+            this.genderTextBox.Size = new System.Drawing.Size(224, 38);
             this.genderTextBox.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.Gray;
             this.genderTextBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -194,7 +192,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(781, 146);
+            this.label5.Location = new System.Drawing.Point(1041, 180);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 13;
@@ -204,7 +203,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(781, 446);
+            this.label6.Location = new System.Drawing.Point(1041, 549);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(183, 20);
             this.label6.TabIndex = 17;
@@ -212,10 +212,11 @@
             // 
             // CNPTextBox
             // 
-            this.CNPTextBox.Location = new System.Drawing.Point(785, 469);
+            this.CNPTextBox.Location = new System.Drawing.Point(1047, 577);
+            this.CNPTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CNPTextBox.Name = "CNPTextBox";
             this.CNPTextBox.PasswordChar = '●';
-            this.CNPTextBox.Size = new System.Drawing.Size(168, 37);
+            this.CNPTextBox.Size = new System.Drawing.Size(224, 37);
             this.CNPTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
             this.CNPTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -230,7 +231,8 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(535, 446);
+            this.label7.Location = new System.Drawing.Point(713, 549);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(122, 20);
             this.label7.TabIndex = 15;
@@ -238,10 +240,11 @@
             // 
             // NPTextBox
             // 
-            this.NPTextBox.Location = new System.Drawing.Point(539, 469);
+            this.NPTextBox.Location = new System.Drawing.Point(719, 577);
+            this.NPTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NPTextBox.Name = "NPTextBox";
             this.NPTextBox.PasswordChar = '●';
-            this.NPTextBox.Size = new System.Drawing.Size(168, 37);
+            this.NPTextBox.Size = new System.Drawing.Size(224, 37);
             this.NPTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
             this.NPTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -256,7 +259,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(535, 146);
+            this.label4.Location = new System.Drawing.Point(713, 180);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 20);
             this.label4.TabIndex = 8;
@@ -266,7 +270,8 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(537, 246);
+            this.label8.Location = new System.Drawing.Point(716, 303);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 20);
             this.label8.TabIndex = 18;
@@ -274,7 +279,8 @@
             // 
             // addToCartBtn
             // 
-            this.addToCartBtn.Location = new System.Drawing.Point(543, 543);
+            this.addToCartBtn.Location = new System.Drawing.Point(724, 668);
+            this.addToCartBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addToCartBtn.Name = "addToCartBtn";
             this.addToCartBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.addToCartBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -288,7 +294,7 @@
             this.addToCartBtn.OverrideDefault.Border.Rounding = 15;
             this.addToCartBtn.OverrideDefault.Border.Width = 1;
             this.addToCartBtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.addToCartBtn.Size = new System.Drawing.Size(114, 36);
+            this.addToCartBtn.Size = new System.Drawing.Size(152, 44);
             this.addToCartBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.addToCartBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
             this.addToCartBtn.StateCommon.Back.ColorAngle = 45F;
@@ -331,7 +337,8 @@
             // 
             // kryptonButton2
             // 
-            this.kryptonButton2.Location = new System.Drawing.Point(318, 269);
+            this.kryptonButton2.Location = new System.Drawing.Point(424, 331);
+            this.kryptonButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.kryptonButton2.Name = "kryptonButton2";
             this.kryptonButton2.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton2.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -345,7 +352,7 @@
             this.kryptonButton2.OverrideDefault.Border.Rounding = 15;
             this.kryptonButton2.OverrideDefault.Border.Width = 1;
             this.kryptonButton2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonButton2.Size = new System.Drawing.Size(157, 36);
+            this.kryptonButton2.Size = new System.Drawing.Size(209, 44);
             this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
             this.kryptonButton2.StateCommon.Back.ColorAngle = 45F;
@@ -386,11 +393,21 @@
             this.kryptonButton2.TabIndex = 21;
             this.kryptonButton2.Values.Text = "Upload Image";
             // 
+            // userIcon
+            // 
+            this.userIcon.Location = new System.Drawing.Point(396, 78);
+            this.userIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userIcon.Name = "userIcon";
+            this.userIcon.Size = new System.Drawing.Size(264, 229);
+            this.userIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userIcon.TabIndex = 0;
+            this.userIcon.TabStop = false;
+            // 
             // Profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.addToCartBtn);
             this.Controls.Add(this.label8);
@@ -410,11 +427,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.userIcon);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Profile";
-            this.Size = new System.Drawing.Size(1260, 620);
+            this.Size = new System.Drawing.Size(1680, 763);
             this.Load += new System.EventHandler(this.Profile_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

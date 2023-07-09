@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Student_UserControl
 {
-    partial class InProgressPage
+    partial class ProcessingPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,11 +30,11 @@
         {
             this.SuspendLayout();
             // 
-            // InProgressPage
+            // HistoryPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "InProgressPage";
+            this.Name = "HistoryPage";
             this.Size = new System.Drawing.Size(1260, 530);
             this.ResumeLayout(false);
 
