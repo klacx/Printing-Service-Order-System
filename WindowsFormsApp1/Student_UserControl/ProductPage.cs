@@ -33,7 +33,7 @@ namespace WindowsFormsApp1.Student_UserControl
 
             ClassBLL objBLL = new ClassBLL();
 
-            DataTable dt = objBLL.getProductItems("product", "");
+            DataTable dt = objBLL.getTableItems("product", "");
 
             if(dt != null ) 
             {
@@ -63,7 +63,7 @@ namespace WindowsFormsApp1.Student_UserControl
 
                             panelContainer.Controls.Add(itemList[i]);
 
-                            //itemList[i].Click += new System.EventHandler(this.addToCartBtn_Click);
+
                         }
                     }
                 }
@@ -72,6 +72,5 @@ namespace WindowsFormsApp1.Student_UserControl
             }
         }
 
-        //public void addToCartBtn_Click(object sender, EventArgs e) {MessageBox.Show("Clicked");}
     }
 }

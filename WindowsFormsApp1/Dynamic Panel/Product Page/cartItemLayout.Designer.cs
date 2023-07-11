@@ -28,66 +28,122 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.c = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_productName = new System.Windows.Forms.Label();
+            this.lbl_unitPrice = new System.Windows.Forms.Label();
+            this.lbl_totalAmount = new System.Windows.Forms.Label();
+            this.addBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.reduceBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.quantityTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.deleteBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
-            // c
+            // lbl_productName
             // 
-            this.c.AutoSize = true;
-            this.c.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.c.Location = new System.Drawing.Point(17, 15);
-            this.c.Name = "c";
-            this.c.Size = new System.Drawing.Size(57, 21);
-            this.c.TabIndex = 1;
-            this.c.Text = "label1";
-            this.c.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_productName.AutoSize = true;
+            this.lbl_productName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_productName.Location = new System.Drawing.Point(17, 15);
+            this.lbl_productName.Name = "lbl_productName";
+            this.lbl_productName.Size = new System.Drawing.Size(147, 21);
+            this.lbl_productName.TabIndex = 1;
+            this.lbl_productName.Text = "lbl_productName";
+            this.lbl_productName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lbl_unitPrice
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(362, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_unitPrice.AutoSize = true;
+            this.lbl_unitPrice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_unitPrice.Location = new System.Drawing.Point(331, 15);
+            this.lbl_unitPrice.Name = "lbl_unitPrice";
+            this.lbl_unitPrice.Size = new System.Drawing.Size(57, 21);
+            this.lbl_unitPrice.TabIndex = 2;
+            this.lbl_unitPrice.Text = "label1";
+            this.lbl_unitPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbl_totalAmount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(580, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 21);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_totalAmount.AutoSize = true;
+            this.lbl_totalAmount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalAmount.Location = new System.Drawing.Point(817, 15);
+            this.lbl_totalAmount.Name = "lbl_totalAmount";
+            this.lbl_totalAmount.Size = new System.Drawing.Size(57, 21);
+            this.lbl_totalAmount.TabIndex = 4;
+            this.lbl_totalAmount.Text = "label3";
+            this.lbl_totalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // addBtn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(790, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 21);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addBtn.Location = new System.Drawing.Point(584, 14);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(23, 23);
+            this.addBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.addBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.addBtn.StateCommon.Back.ColorAngle = 45F;
+            this.addBtn.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.addBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.addBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.addBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.addBtn.TabIndex = 5;
+            this.addBtn.Values.Text = "+";
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // UserControl1
+            // reduceBtn
+            // 
+            this.reduceBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reduceBtn.Location = new System.Drawing.Point(654, 14);
+            this.reduceBtn.Name = "reduceBtn";
+            this.reduceBtn.Size = new System.Drawing.Size(23, 23);
+            this.reduceBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.reduceBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.reduceBtn.StateCommon.Back.ColorAngle = 45F;
+            this.reduceBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.reduceBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reduceBtn.TabIndex = 6;
+            this.reduceBtn.Values.Text = "-";
+            this.reduceBtn.Click += new System.EventHandler(this.reduceBtn_Click);
+            // 
+            // quantityTextBox
+            // 
+            this.quantityTextBox.Location = new System.Drawing.Point(613, 14);
+            this.quantityTextBox.Name = "quantityTextBox";
+            this.quantityTextBox.Size = new System.Drawing.Size(34, 23);
+            this.quantityTextBox.TabIndex = 7;
+            this.quantityTextBox.Text = "1";
+            this.quantityTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteBtn.Location = new System.Drawing.Point(1023, 14);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(56, 23);
+            this.deleteBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.deleteBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.deleteBtn.StateCommon.Back.ColorAngle = 45F;
+            this.deleteBtn.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.deleteBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.deleteBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.deleteBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.deleteBtn.TabIndex = 8;
+            this.deleteBtn.Values.Text = "Delete";
+            // 
+            // cartItemLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.c);
-            this.Name = "UserControl1";
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.quantityTextBox);
+            this.Controls.Add(this.reduceBtn);
+            this.Controls.Add(this.addBtn);
+            this.Controls.Add(this.lbl_totalAmount);
+            this.Controls.Add(this.lbl_unitPrice);
+            this.Controls.Add(this.lbl_productName);
+            this.Name = "cartItemLayout";
             this.Size = new System.Drawing.Size(1136, 51);
+            this.Load += new System.EventHandler(this.cartItemLayout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,9 +151,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label c;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_productName;
+        private System.Windows.Forms.Label lbl_unitPrice;
+        private System.Windows.Forms.Label lbl_totalAmount;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton addBtn;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton reduceBtn;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox quantityTextBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton deleteBtn;
     }
 }

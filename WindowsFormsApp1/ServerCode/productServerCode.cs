@@ -42,7 +42,7 @@ namespace WindowsFormsApp1.ServerCode
     
     class ClassBLL
     {
-        public DataTable getProductItems(string tableName, string condition)
+        public DataTable getTableItems(string tableName, string condition)
         {
             try
             {

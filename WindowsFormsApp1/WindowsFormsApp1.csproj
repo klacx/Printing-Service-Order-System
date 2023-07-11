@@ -72,17 +72,17 @@
     <Compile Include="Dynamic Panel\Product Page\cartItemLayout.Designer.cs">
       <DependentUpon>cartItemLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dynamic Panel\Product Page\UserControl1.cs">
+    <Compile Include="Dynamic Panel\Product Page\studentHistoryLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dynamic Panel\Product Page\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="Dynamic Panel\Product Page\studentHistoryLayout.Designer.cs">
+      <DependentUpon>studentHistoryLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
@@ -114,11 +114,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ServerCode\productServerCode.cs" />
-    <Compile Include="Student_UserControl\ProcessingPage.cs">
+    <Compile Include="Student_UserControl\HistoryPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Student_UserControl\ProcessingPage.Designer.cs">
-      <DependentUpon>ProcessingPage.cs</DependentUpon>
+    <Compile Include="Student_UserControl\HistoryPage.Designer.cs">
+      <DependentUpon>HistoryPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Student_UserControl\ShoppingCart.cs">
       <SubType>UserControl</SubType>
@@ -144,11 +144,11 @@
     <EmbeddedResource Include="Dynamic Panel\Product Page\cartItemLayout.resx">
       <DependentUpon>cartItemLayout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dynamic Panel\Product Page\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="Dynamic Panel\Product Page\studentHistoryLayout.resx">
+      <DependentUpon>studentHistoryLayout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -167,8 +167,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student_UserControl\ProcessingPage.resx">
-      <DependentUpon>ProcessingPage.cs</DependentUpon>
+    <EmbeddedResource Include="Student_UserControl\HistoryPage.resx">
+      <DependentUpon>HistoryPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student_UserControl\ShoppingCart.resx">
       <DependentUpon>ShoppingCart.cs</DependentUpon>

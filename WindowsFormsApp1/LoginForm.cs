@@ -45,7 +45,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                Profile profile = new Profile(usernameTextBox.Text);
                 string permission = DT.Rows[0][0].ToString().Replace(" ", String.Empty);
                 if (permission == "admin")
                 {

@@ -27,7 +27,7 @@ namespace WindowsFormsApp1.Student_UserControl
         {
 
             ClassBLL objBLL = new ClassBLL();
-            DataTable dt = objBLL.getProductItems("_User ", ("WHERE user_id='" + userID + "'"));
+            DataTable dt = objBLL.getTableItems("_User", (" WHERE user_id ='" + userID + "'"));
             if (dt != null)
             {
                 if (dt.Rows.Count > 0)

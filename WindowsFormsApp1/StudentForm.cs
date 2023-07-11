@@ -67,9 +67,9 @@ namespace WindowsFormsApp1
             addUserControl(PP);
         }
 
-        private void ProcessingBtn_Click(object sender, EventArgs e)
+        private void historyBtn_Click(object sender, EventArgs e)
         {
-            ProcessingPage HP = new ProcessingPage();
+            HistoryPage HP = new HistoryPage(userID);
             addUserControl(HP);
         }
 
@@ -80,7 +80,7 @@ namespace WindowsFormsApp1
 
         private void cartBtn_Click(object sender, EventArgs e)
         {
-            ShoppingCart cart = new ShoppingCart();
+            ShoppingCart cart = new ShoppingCart(userID);
             addUserControl(cart);
         }
 
