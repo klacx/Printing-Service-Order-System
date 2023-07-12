@@ -113,7 +113,7 @@
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ServerCode\productServerCode.cs" />
+    <Compile Include="ServerCode\serverCode.cs" />
     <Compile Include="Student_UserControl\HistoryPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
