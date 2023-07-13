@@ -44,7 +44,7 @@
             this.NPTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.addToCartBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.updateBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.userIcon = new WindowsFormsApp1.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.genderTextBox)).BeginInit();
@@ -54,7 +54,7 @@
             // firstNameTextBox
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(719, 85);
-            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(224, 38);
             this.firstNameTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
@@ -66,6 +66,7 @@
             this.firstNameTextBox.StateCommon.Content.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstNameTextBox.TabIndex = 1;
             this.firstNameTextBox.Text = "first name";
+            this.firstNameTextBox.TextChanged += new System.EventHandler(this.firstNameTextBox_TextChanged);
             // 
             // label1
             // 
@@ -92,7 +93,7 @@
             // lastNameTextBox
             // 
             this.lastNameTextBox.Location = new System.Drawing.Point(1047, 85);
-            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(224, 38);
             this.lastNameTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
@@ -119,7 +120,7 @@
             // emailTextBox
             // 
             this.emailTextBox.Location = new System.Drawing.Point(719, 454);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(552, 38);
             this.emailTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
@@ -135,7 +136,7 @@
             // phoneNumberTextBox
             // 
             this.phoneNumberTextBox.Location = new System.Drawing.Point(719, 208);
-            this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(224, 38);
             this.phoneNumberTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
@@ -152,7 +153,7 @@
             // 
             this.dobTimePicker.Checked = false;
             this.dobTimePicker.Location = new System.Drawing.Point(719, 331);
-            this.dobTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dobTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.dobTimePicker.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dobTimePicker.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dobTimePicker.Name = "dobTimePicker";
@@ -174,7 +175,7 @@
             "female",
             "other"});
             this.genderTextBox.Location = new System.Drawing.Point(1047, 208);
-            this.genderTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.genderTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.genderTextBox.MinimumSize = new System.Drawing.Size(224, 38);
             this.genderTextBox.Name = "genderTextBox";
             this.genderTextBox.Size = new System.Drawing.Size(224, 38);
@@ -213,7 +214,7 @@
             // CNPTextBox
             // 
             this.CNPTextBox.Location = new System.Drawing.Point(1047, 577);
-            this.CNPTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CNPTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CNPTextBox.Name = "CNPTextBox";
             this.CNPTextBox.PasswordChar = '●';
             this.CNPTextBox.Size = new System.Drawing.Size(224, 37);
@@ -241,7 +242,7 @@
             // NPTextBox
             // 
             this.NPTextBox.Location = new System.Drawing.Point(719, 577);
-            this.NPTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NPTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NPTextBox.Name = "NPTextBox";
             this.NPTextBox.PasswordChar = '●';
             this.NPTextBox.Size = new System.Drawing.Size(224, 37);
@@ -277,68 +278,71 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Date of Birth:";
             // 
-            // addToCartBtn
+            // updateBtn
             // 
-            this.addToCartBtn.Location = new System.Drawing.Point(724, 668);
-            this.addToCartBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.addToCartBtn.Name = "addToCartBtn";
-            this.addToCartBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.addToCartBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.addToCartBtn.OverrideDefault.Back.ColorAngle = 45F;
-            this.addToCartBtn.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.addToCartBtn.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.addToCartBtn.OverrideDefault.Border.ColorAngle = 45F;
-            this.addToCartBtn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.updateBtn.Enabled = false;
+            this.updateBtn.Location = new System.Drawing.Point(724, 668);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.updateBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.updateBtn.OverrideDefault.Back.ColorAngle = 45F;
+            this.updateBtn.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.updateBtn.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.updateBtn.OverrideDefault.Border.ColorAngle = 45F;
+            this.updateBtn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.addToCartBtn.OverrideDefault.Border.Rounding = 15;
-            this.addToCartBtn.OverrideDefault.Border.Width = 1;
-            this.addToCartBtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.addToCartBtn.Size = new System.Drawing.Size(152, 44);
-            this.addToCartBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.addToCartBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
-            this.addToCartBtn.StateCommon.Back.ColorAngle = 45F;
-            this.addToCartBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.addToCartBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
-            this.addToCartBtn.StateCommon.Border.ColorAngle = 45F;
-            this.addToCartBtn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.updateBtn.OverrideDefault.Border.Rounding = 15;
+            this.updateBtn.OverrideDefault.Border.Width = 1;
+            this.updateBtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.updateBtn.Size = new System.Drawing.Size(152, 44);
+            this.updateBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.updateBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.updateBtn.StateCommon.Back.ColorAngle = 45F;
+            this.updateBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.updateBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.updateBtn.StateCommon.Border.ColorAngle = 45F;
+            this.updateBtn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.addToCartBtn.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.addToCartBtn.StateCommon.Border.Rounding = 15;
-            this.addToCartBtn.StateCommon.Border.Width = 1;
-            this.addToCartBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.addToCartBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.addToCartBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addToCartBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
-            this.addToCartBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
-            this.addToCartBtn.StatePressed.Back.ColorAngle = 135F;
-            this.addToCartBtn.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
-            this.addToCartBtn.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
-            this.addToCartBtn.StatePressed.Border.ColorAngle = 135F;
-            this.addToCartBtn.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.updateBtn.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.updateBtn.StateCommon.Border.Rounding = 15;
+            this.updateBtn.StateCommon.Border.Width = 1;
+            this.updateBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.updateBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.updateBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.StateDisabled.Back.Color1 = System.Drawing.Color.Gray;
+            this.updateBtn.StateDisabled.Back.Color2 = System.Drawing.Color.DarkGray;
+            this.updateBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
+            this.updateBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
+            this.updateBtn.StatePressed.Back.ColorAngle = 135F;
+            this.updateBtn.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
+            this.updateBtn.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
+            this.updateBtn.StatePressed.Border.ColorAngle = 135F;
+            this.updateBtn.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.addToCartBtn.StatePressed.Border.Rounding = 15;
-            this.addToCartBtn.StatePressed.Border.Width = 1;
-            this.addToCartBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.addToCartBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.addToCartBtn.StateTracking.Back.ColorAngle = 45F;
-            this.addToCartBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.addToCartBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.addToCartBtn.StateTracking.Border.ColorAngle = 45F;
-            this.addToCartBtn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.updateBtn.StatePressed.Border.Rounding = 15;
+            this.updateBtn.StatePressed.Border.Width = 1;
+            this.updateBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.updateBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.updateBtn.StateTracking.Back.ColorAngle = 45F;
+            this.updateBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.updateBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.updateBtn.StateTracking.Border.ColorAngle = 45F;
+            this.updateBtn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.addToCartBtn.StateTracking.Border.Rounding = 15;
-            this.addToCartBtn.StateTracking.Border.Width = 1;
-            this.addToCartBtn.TabIndex = 20;
-            this.addToCartBtn.Values.Text = "Update";
+            this.updateBtn.StateTracking.Border.Rounding = 15;
+            this.updateBtn.StateTracking.Border.Width = 1;
+            this.updateBtn.TabIndex = 20;
+            this.updateBtn.Values.Text = "Update";
             // 
             // kryptonButton2
             // 
             this.kryptonButton2.Location = new System.Drawing.Point(424, 331);
-            this.kryptonButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonButton2.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonButton2.Name = "kryptonButton2";
             this.kryptonButton2.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton2.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -390,13 +394,13 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton2.StateTracking.Border.Rounding = 15;
             this.kryptonButton2.StateTracking.Border.Width = 1;
-            this.kryptonButton2.TabIndex = 21;
+            this.kryptonButton2.TabIndex = 0;
             this.kryptonButton2.Values.Text = "Upload Image";
             // 
             // userIcon
             // 
             this.userIcon.Location = new System.Drawing.Point(396, 78);
-            this.userIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userIcon.Margin = new System.Windows.Forms.Padding(4);
             this.userIcon.Name = "userIcon";
             this.userIcon.Size = new System.Drawing.Size(264, 229);
             this.userIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -409,7 +413,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.kryptonButton2);
-            this.Controls.Add(this.addToCartBtn);
+            this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.CNPTextBox);
@@ -427,7 +431,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.userIcon);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Profile";
             this.Size = new System.Drawing.Size(1680, 763);
             this.Load += new System.EventHandler(this.Profile_Load);
@@ -457,7 +461,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox NPTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton addToCartBtn;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton updateBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
     }
 }

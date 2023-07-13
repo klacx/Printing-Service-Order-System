@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
 
         private void ProductBtn_Click(object sender, EventArgs e)
         {
-            ProductPage PP = new ProductPage();
+            ProductPage PP = new ProductPage(userID);
             addUserControl(PP);
         }
 

@@ -30,14 +30,15 @@
         {
             this.panelContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_total = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.lbl_totalAmount = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_unitPrice = new System.Windows.Forms.Label();
             this.lbl_productName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.paymentBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -52,12 +53,24 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lbl_totalAmount);
+            this.panel1.Controls.Add(this.paymentBtn);
+            this.panel1.Controls.Add(this.lbl_total);
             this.panel1.Controls.Add(this.label);
             this.panel1.Location = new System.Drawing.Point(0, 565);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1260, 63);
             this.panel1.TabIndex = 1;
+            // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Location = new System.Drawing.Point(181, 20);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(91, 25);
+            this.lbl_total.TabIndex = 4;
+            this.lbl_total.Text = "RM 0.00";
+            this.lbl_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label
             // 
@@ -69,17 +82,6 @@
             this.label.TabIndex = 3;
             this.label.Text = "Total Amount:";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_totalAmount
-            // 
-            this.lbl_totalAmount.AutoSize = true;
-            this.lbl_totalAmount.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalAmount.Location = new System.Drawing.Point(181, 20);
-            this.lbl_totalAmount.Name = "lbl_totalAmount";
-            this.lbl_totalAmount.Size = new System.Drawing.Size(91, 25);
-            this.lbl_totalAmount.TabIndex = 4;
-            this.lbl_totalAmount.Text = "RM 0.00";
-            this.lbl_totalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -93,6 +95,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1150, 40);
             this.panel2.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1022, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 21);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Action";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(593, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 21);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Quantity";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -127,27 +151,29 @@
             this.lbl_productName.Text = "Product Name";
             this.lbl_productName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // paymentBtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(593, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 21);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Quantity";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1022, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 21);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Action";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.paymentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.paymentBtn.Location = new System.Drawing.Point(1111, 12);
+            this.paymentBtn.Name = "paymentBtn";
+            this.paymentBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.paymentBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.paymentBtn.OverrideDefault.Back.ColorAngle = 45F;
+            this.paymentBtn.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.paymentBtn.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.paymentBtn.OverrideFocus.Back.ColorAngle = 45F;
+            this.paymentBtn.Size = new System.Drawing.Size(135, 39);
+            this.paymentBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.paymentBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.paymentBtn.StateCommon.Back.ColorAngle = 45F;
+            this.paymentBtn.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.paymentBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.paymentBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.paymentBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.paymentBtn.TabIndex = 9;
+            this.paymentBtn.Values.Text = "Proceed to Payment";
+            this.paymentBtn.Click += new System.EventHandler(this.paymentBtn_Click);
             // 
             // ShoppingCart
             // 
@@ -169,10 +195,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel panelContainer;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_totalAmount;
+        private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -180,5 +204,7 @@
         private System.Windows.Forms.Label lbl_productName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.FlowLayoutPanel panelContainer;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton paymentBtn;
     }
 }

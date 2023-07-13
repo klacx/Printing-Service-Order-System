@@ -27,82 +27,171 @@ namespace WindowsFormsApp1.Student_UserControl
             userID = user_id;
         }
 
-        private void ShoppingCart_Load(object sender, EventArgs e)
+        internal void ShoppingCart_Load(object sender, EventArgs e)
         {
             ProductUserControl();
         }
 
         public void ProductUserControl()
-        {   
+        {
             panelContainer.Controls.Clear();
 
             Connection con = new Connection();
             SqlDataAdapter CIAD = new SqlDataAdapter("SELECT cart_id FROM ShoppingCart WHERE user_id='" + userID + "'", con.connect);
             DataTable CIDT = new DataTable();
+            CIDT.Clear();
             CIAD.Fill(CIDT);
-
             if (CIDT != null)
             {
                 ClassBLL objBLL = new ClassBLL();
                 DataTable dt = objBLL.getTableItems("ShoppingCartItem", " WHERE cart_id ='" + CIDT.Rows[0]["cart_id"] + "'");
-
-                if (dt != null)
+                if (dt != null && dt.Rows.Count > 0)
                 {
-                    if (dt.Rows.Count > 0)
+                    cartItemLayout[] itemList = new cartItemLayout[dt.Rows.Count];
+
+                    for (int i = 0; i < 1; i++)
                     {
-                        cartItemLayout[] itemList = new cartItemLayout[dt.Rows.Count];
-
-                        for (int i = 0; i < 1; i++)
+                        foreach (DataRow row in dt.Rows)
                         {
-                            foreach (DataRow row in dt.Rows)
+                            itemList[i] = new cartItemLayout();
+
+                            itemList[i].quantity = row["quantity"].ToString();
+
+                            SqlDataAdapter PAD = new SqlDataAdapter("SELECT * FROM Product  WHERE product_id = '" + row["product_id"] + "'", con.connect);
+                            DataTable PDT = new DataTable();
+                            PAD.Fill(PDT);
+
+                            foreach (DataRow detail in PDT.Rows)
                             {
-                                itemList[i] = new cartItemLayout();
+                                itemList[i].productName = detail["product_name"].ToString();
 
-                                itemList[i].quantity = row["quantity"].ToString();
-
-                                SqlDataAdapter PAD = new SqlDataAdapter("SELECT * FROM Product  WHERE product_id = '" + row["product_id"] + "'", con.connect);
-                                DataTable PDT = new DataTable();
-                                PAD.Fill(PDT);
-
-                                foreach (DataRow detail in PDT.Rows)
+                                if (itemList[i].productName == "Printing A4– Black and White")
                                 {
-                                    itemList[i].productName = detail["product_name"].ToString();
-
-                                    if (itemList[i].productName == "Printing A4– Black and White")
-                                    {
-                                        if (int.Parse(itemList[i].quantity) <= 99)
-                                        {
-                                            itemList[i].unitPrice = "RM " + detail["price"];
-                                            unitPrice = decimal.Parse(detail["price"].ToString());
-                                        }
-                                        else
-                                        {
-                                            itemList[i].unitPrice = "RM " + detail["special_price"];
-                                            unitPrice = decimal.Parse(detail["special_price"].ToString());
-                                        }
-                                    }
-                                    else
+                                    if (int.Parse(itemList[i].quantity) <= 99)
                                     {
                                         itemList[i].unitPrice = "RM " + detail["price"];
                                         unitPrice = decimal.Parse(detail["price"].ToString());
                                     }
-
-                                    decimal unitTotalAmount = unitPrice * int.Parse(itemList[i].quantity);
-                                    itemList[i].totalAmount = string.Format(new CultureInfo("en-MY"), "{0:C2}", unitTotalAmount);
-
-                                    totalAmount += unitTotalAmount;
+                                    else
+                                    {
+                                        itemList[i].unitPrice = "RM " + detail["special_price"];
+                                        unitPrice = decimal.Parse(detail["special_price"].ToString());
+                                    }
+                                }
+                                else
+                                {
+                                    itemList[i].unitPrice = "RM " + detail["price"];
+                                    unitPrice = decimal.Parse(detail["price"].ToString());
                                 }
 
-                                panelContainer.Controls.Add(itemList[i]);
-                                lbl_totalAmount.Text = string.Format(new CultureInfo("en-MY"), "{0:C2}", totalAmount);
+                                decimal unitTotalAmount = unitPrice * int.Parse(itemList[i].quantity);
+                                itemList[i].totalAmount = string.Format(new CultureInfo("en-MY"), "{0:C2}", unitTotalAmount);
+
+                                totalAmount += unitTotalAmount;
+
+                                itemList[i].product_id = row["product_id"].ToString();
+
+                                itemList[i].userID = userID;
                             }
+
+                            panelContainer.Controls.Add(itemList[i]);
+                            lbl_total.Text = string.Format(new CultureInfo("en-MY"), "{0:C2}", totalAmount);
                         }
+
                     }
 
 
                 }
             }
-            
+
         }
+
+        public void Refresh()
+        {
+            panelContainer.Controls.Clear();
+
+            Connection con = new Connection();
+            SqlDataAdapter CIAD = new SqlDataAdapter("SELECT cart_id FROM ShoppingCart WHERE user_id='" + userID + "'", con.connect);
+            DataTable CIDT = new DataTable();
+            CIDT.Clear();
+            CIAD.Fill(CIDT);
+            if (CIDT != null)
+            {
+                ClassBLL objBLL = new ClassBLL();
+                DataTable dt = objBLL.getTableItems("ShoppingCartItem", " WHERE cart_id ='" + CIDT.Rows[0]["cart_id"] + "'");
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    cartItemLayout[] itemList = new cartItemLayout[dt.Rows.Count];
+
+                    for (int i = 0; i < 1; i++)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            itemList[i] = new cartItemLayout();
+
+                            itemList[i].quantity = row["quantity"].ToString();
+
+                            SqlDataAdapter PAD = new SqlDataAdapter("SELECT * FROM Product  WHERE product_id = '" + row["product_id"] + "'", con.connect);
+                            DataTable PDT = new DataTable();
+                            PAD.Fill(PDT);
+
+                            foreach (DataRow detail in PDT.Rows)
+                            {
+                                itemList[i].productName = detail["product_name"].ToString();
+
+                                if (itemList[i].productName == "Printing A4– Black and White")
+                                {
+                                    if (int.Parse(itemList[i].quantity) <= 99)
+                                    {
+                                        itemList[i].unitPrice = "RM " + detail["price"];
+                                        unitPrice = decimal.Parse(detail["price"].ToString());
+                                    }
+                                    else
+                                    {
+                                        itemList[i].unitPrice = "RM " + detail["special_price"];
+                                        unitPrice = decimal.Parse(detail["special_price"].ToString());
+                                    }
+                                }
+                                else
+                                {
+                                    itemList[i].unitPrice = "RM " + detail["price"];
+                                    unitPrice = decimal.Parse(detail["price"].ToString());
+                                }
+
+                                decimal unitTotalAmount = unitPrice * int.Parse(itemList[i].quantity);
+                                itemList[i].totalAmount = string.Format(new CultureInfo("en-MY"), "{0:C2}", unitTotalAmount);
+
+                                totalAmount += unitTotalAmount;
+
+                                itemList[i].product_id = row["product_id"].ToString();
+
+                                itemList[i].userID = userID;
+                            }
+
+                            panelContainer.Controls.Add(itemList[i]);
+                            lbl_total.Text = string.Format(new CultureInfo("en-MY"), "{0:C2}", totalAmount);
+                        }
+
+                    }
+
+
+                }
+            }
+        }
+
+        private void paymentBtn_Click(object sender, EventArgs e)
+        {
+            calculateTotal();
+        }
+        public void calculateTotal() 
+        {
+            decimal totalAmount = 0;
+            foreach (cartItemLayout item in panelContainer.Controls)
+            {
+                totalAmount += decimal.Parse(item.lbl_totalAmount.Text.Replace("RM", String.Empty));
+            }
+            lbl_total.Text = "RM"+ totalAmount.ToString();
+        }
+
     }
 }

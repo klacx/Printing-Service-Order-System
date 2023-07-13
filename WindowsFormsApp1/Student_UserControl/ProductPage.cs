@@ -17,9 +17,11 @@ namespace WindowsFormsApp1.Student_UserControl
 
     public partial class ProductPage : UserControl
     {
-        public ProductPage()
+        public string userID;
+        public ProductPage(string user_id)
         {
             InitializeComponent();
+            userID = user_id;
         }
 
         private void ProductPage_Load(object sender, EventArgs e)
@@ -35,17 +37,15 @@ namespace WindowsFormsApp1.Student_UserControl
 
             DataTable dt = objBLL.getTableItems("product", "");
 
-            if(dt != null ) 
+            if(dt != null && dt.Rows.Count > 0 ) 
             {
-                if (dt.Rows.Count > 0)
-                {
                     productLayout[] itemList = new productLayout[dt.Rows.Count];
 
                     for (int i = 0; i <1; i++)
                     {
                         foreach(DataRow row in dt.Rows) 
                         {
-                            itemList[i] = new productLayout();
+                            itemList[i] = new productLayout(userID);
 
                             try
                             {
@@ -60,13 +60,14 @@ namespace WindowsFormsApp1.Student_UserControl
                             itemList[i].SpecialPrice = "RM " + row["special_price"].ToString() + "/per 100 unit";
                             if(row["price"].ToString().Replace(" ", String.Empty) == row["special_price"].ToString().Replace(" ", String.Empty))
                             { itemList[i].lbl_specialPrice.Visible = false; }
+                            itemList[i].product_id = row["product_id"].ToString();
 
                             panelContainer.Controls.Add(itemList[i]);
 
 
                         }
                     }
-                }
+                
                 
             
             }
