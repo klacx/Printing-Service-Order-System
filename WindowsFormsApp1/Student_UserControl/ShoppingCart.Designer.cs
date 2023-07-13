@@ -30,6 +30,7 @@
         {
             this.panelContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.paymentBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lbl_total = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -38,13 +39,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_unitPrice = new System.Windows.Forms.Label();
             this.lbl_productName = new System.Windows.Forms.Label();
-            this.paymentBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
             // 
+            this.panelContainer.AutoScroll = true;
             this.panelContainer.Location = new System.Drawing.Point(57, 60);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1150, 478);
@@ -60,6 +61,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1260, 63);
             this.panel1.TabIndex = 1;
+            // 
+            // paymentBtn
+            // 
+            this.paymentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.paymentBtn.Location = new System.Drawing.Point(1111, 12);
+            this.paymentBtn.Name = "paymentBtn";
+            this.paymentBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.paymentBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.paymentBtn.OverrideDefault.Back.ColorAngle = 45F;
+            this.paymentBtn.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.paymentBtn.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.paymentBtn.OverrideFocus.Back.ColorAngle = 45F;
+            this.paymentBtn.Size = new System.Drawing.Size(135, 39);
+            this.paymentBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.paymentBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.paymentBtn.StateCommon.Back.ColorAngle = 45F;
+            this.paymentBtn.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.paymentBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.paymentBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.paymentBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.paymentBtn.TabIndex = 9;
+            this.paymentBtn.Values.Text = "Proceed to Payment";
+            this.paymentBtn.Click += new System.EventHandler(this.paymentBtn_Click);
             // 
             // lbl_total
             // 
@@ -82,6 +107,7 @@
             this.label.TabIndex = 3;
             this.label.Text = "Total Amount:";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label.Click += new System.EventHandler(this.label_Click);
             // 
             // panel2
             // 
@@ -150,30 +176,6 @@
             this.lbl_productName.TabIndex = 9;
             this.lbl_productName.Text = "Product Name";
             this.lbl_productName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // paymentBtn
-            // 
-            this.paymentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.paymentBtn.Location = new System.Drawing.Point(1111, 12);
-            this.paymentBtn.Name = "paymentBtn";
-            this.paymentBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
-            this.paymentBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.paymentBtn.OverrideDefault.Back.ColorAngle = 45F;
-            this.paymentBtn.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
-            this.paymentBtn.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.paymentBtn.OverrideFocus.Back.ColorAngle = 45F;
-            this.paymentBtn.Size = new System.Drawing.Size(135, 39);
-            this.paymentBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
-            this.paymentBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.paymentBtn.StateCommon.Back.ColorAngle = 45F;
-            this.paymentBtn.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
-            this.paymentBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.paymentBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.paymentBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.paymentBtn.TabIndex = 9;
-            this.paymentBtn.Values.Text = "Proceed to Payment";
-            this.paymentBtn.Click += new System.EventHandler(this.paymentBtn_Click);
             // 
             // ShoppingCart
             // 

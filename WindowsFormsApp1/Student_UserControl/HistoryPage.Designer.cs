@@ -31,18 +31,19 @@
             this.panelContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_orderDate = new System.Windows.Forms.Label();
-            this.lbl_orderStatus = new System.Windows.Forms.Label();
-            this.lbl_amount = new System.Windows.Forms.Label();
             this.lbl_orderDetails = new System.Windows.Forms.Label();
+            this.lbl_orderStatus = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
+            this.lbl_amount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
             // 
+            this.panelContainer.AutoScroll = true;
             this.panelContainer.Location = new System.Drawing.Point(55, 62);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1150, 468);
+            this.panelContainer.Size = new System.Drawing.Size(1173, 468);
             this.panelContainer.TabIndex = 0;
             // 
             // panel1
@@ -55,7 +56,7 @@
             this.panel1.Controls.Add(this.lbl_amount);
             this.panel1.Location = new System.Drawing.Point(55, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1150, 38);
+            this.panel1.Size = new System.Drawing.Size(1173, 38);
             this.panel1.TabIndex = 1;
             // 
             // lbl_orderDate
@@ -69,28 +70,6 @@
             this.lbl_orderDate.Text = "Order Date";
             this.lbl_orderDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_orderStatus
-            // 
-            this.lbl_orderStatus.AutoSize = true;
-            this.lbl_orderStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_orderStatus.Location = new System.Drawing.Point(1055, 8);
-            this.lbl_orderStatus.Name = "lbl_orderStatus";
-            this.lbl_orderStatus.Size = new System.Drawing.Size(59, 21);
-            this.lbl_orderStatus.TabIndex = 9;
-            this.lbl_orderStatus.Text = "Status";
-            this.lbl_orderStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_amount
-            // 
-            this.lbl_amount.AutoSize = true;
-            this.lbl_amount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_amount.Location = new System.Drawing.Point(500, 8);
-            this.lbl_amount.Name = "lbl_amount";
-            this.lbl_amount.Size = new System.Drawing.Size(118, 21);
-            this.lbl_amount.TabIndex = 8;
-            this.lbl_amount.Text = "Total Amount";
-            this.lbl_amount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lbl_orderDetails
             // 
             this.lbl_orderDetails.AutoSize = true;
@@ -102,6 +81,17 @@
             this.lbl_orderDetails.Text = "Details";
             this.lbl_orderDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbl_orderStatus
+            // 
+            this.lbl_orderStatus.AutoSize = true;
+            this.lbl_orderStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_orderStatus.Location = new System.Drawing.Point(1055, 8);
+            this.lbl_orderStatus.Name = "lbl_orderStatus";
+            this.lbl_orderStatus.Size = new System.Drawing.Size(59, 21);
+            this.lbl_orderStatus.TabIndex = 9;
+            this.lbl_orderStatus.Text = "Status";
+            this.lbl_orderStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lbl_id
             // 
             this.lbl_id.AutoSize = true;
@@ -112,6 +102,17 @@
             this.lbl_id.TabIndex = 6;
             this.lbl_id.Text = "order ID";
             this.lbl_id.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_amount
+            // 
+            this.lbl_amount.AutoSize = true;
+            this.lbl_amount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_amount.Location = new System.Drawing.Point(500, 8);
+            this.lbl_amount.Name = "lbl_amount";
+            this.lbl_amount.Size = new System.Drawing.Size(118, 21);
+            this.lbl_amount.TabIndex = 8;
+            this.lbl_amount.Text = "Total Amount";
+            this.lbl_amount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // HistoryPage
             // 

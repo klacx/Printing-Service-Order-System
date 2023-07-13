@@ -66,7 +66,6 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 
         private void addToCartBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Title);
             addItemToCart();
         }
 

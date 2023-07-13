@@ -129,6 +129,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                 cmd.ExecuteNonQuery();
             }
             Refresh();
+            this.Parent.Controls.Remove(this);
         }
 
         public void Refresh() 
@@ -140,7 +141,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 
             if (dt.Rows.Count < 1) 
             {
-                this.Parent.Controls.Remove(this);
+                lbl_totalAmount.Text = "RM0.00";
             }
             else 
             {
@@ -177,6 +178,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                     
                 }
             }
+            (this.Parent).Parent.GetType().InvokeMember("calculateTotal", System.Reflection.BindingFlags.InvokeMethod, null, (this.Parent).Parent, null);
         }
 
         private void lbl_unitPrice_Click(object sender, EventArgs e)
