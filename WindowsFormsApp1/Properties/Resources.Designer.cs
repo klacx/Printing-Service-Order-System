@@ -113,6 +113,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gainsboro {
+            get {
+                object obj = ResourceManager.GetObject("gainsboro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap illustration_of_human_icon_user_symbol_icon_modern_design_on_blank_background_free_vector {
             get {
                 object obj = ResourceManager.GetObject("illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-fre" +
@@ -157,6 +167,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap shopping_cart1 {
             get {
                 object obj = ResourceManager.GetObject("shopping-cart1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white {
+            get {
+                object obj = ResourceManager.GetObject("white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

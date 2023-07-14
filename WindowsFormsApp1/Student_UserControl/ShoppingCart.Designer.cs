@@ -30,6 +30,7 @@
         {
             this.panelContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.urgentCheckBox = new System.Windows.Forms.CheckBox();
             this.paymentBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lbl_total = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_unitPrice = new System.Windows.Forms.Label();
             this.lbl_productName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +56,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.urgentCheckBox);
             this.panel1.Controls.Add(this.paymentBtn);
             this.panel1.Controls.Add(this.lbl_total);
             this.panel1.Controls.Add(this.label);
@@ -61,6 +64,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1260, 63);
             this.panel1.TabIndex = 1;
+            // 
+            // urgentCheckBox
+            // 
+            this.urgentCheckBox.AutoSize = true;
+            this.urgentCheckBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.urgentCheckBox.Location = new System.Drawing.Point(955, 20);
+            this.urgentCheckBox.Name = "urgentCheckBox";
+            this.urgentCheckBox.Size = new System.Drawing.Size(141, 24);
+            this.urgentCheckBox.TabIndex = 10;
+            this.urgentCheckBox.Text = "Urgent Request";
+            this.urgentCheckBox.UseVisualStyleBackColor = true;
+            this.urgentCheckBox.CheckedChanged += new System.EventHandler(this.urgentCheckBox_CheckedChanged);
             // 
             // paymentBtn
             // 
@@ -78,6 +93,7 @@
             this.paymentBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.paymentBtn.StateCommon.Back.ColorAngle = 45F;
             this.paymentBtn.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.paymentBtn.StateCommon.Border.Rounding = 5;
             this.paymentBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.paymentBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paymentBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -177,11 +193,23 @@
             this.lbl_productName.Text = "Product Name";
             this.lbl_productName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 545);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(813, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "· There is a surcharge of 30% for any urgent requests. Urgent requests will be co" +
+    "mpleted within two hours during business hours";
+            // 
             // ShoppingCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelContainer);
@@ -193,6 +221,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -208,5 +237,7 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.FlowLayoutPanel panelContainer;
         private ComponentFactory.Krypton.Toolkit.KryptonButton paymentBtn;
+        private System.Windows.Forms.CheckBox urgentCheckBox;
+        private System.Windows.Forms.Label label4;
     }
 }

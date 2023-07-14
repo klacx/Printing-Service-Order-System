@@ -167,7 +167,7 @@
             this.Controls.Add(this.lbl_unitPrice);
             this.Controls.Add(this.lbl_productName);
             this.Name = "cartItemLayout";
-            this.Size = new System.Drawing.Size(1150, 51);
+            this.Size = new System.Drawing.Size(1144, 51);
             this.Load += new System.EventHandler(this.cartItemLayout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

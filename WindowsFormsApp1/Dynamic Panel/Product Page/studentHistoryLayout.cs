@@ -32,6 +32,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
         private string _totalAmount;
         private string _orderDate;
         private string _orderStatus;
+        private bool _urgent;
 
         public string orderId
         {
@@ -69,6 +70,19 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
               { lbl_orderStatus.ForeColor = Color.Blue; }
               else if (_orderStatus == "completed")
               { lbl_orderStatus.ForeColor = Color.Green; }
+            }
+        }
+
+        public bool urgent
+        {
+            get { return _urgent; }
+            set 
+            { 
+                _urgent = value; 
+                if (value == true)
+                {
+                    this.BackColor = Color.Gainsboro;
+                }
             }
         }
 

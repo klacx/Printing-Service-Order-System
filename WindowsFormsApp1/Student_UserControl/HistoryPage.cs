@@ -54,7 +54,7 @@ namespace WindowsFormsApp1.Student_UserControl
                             itemList[i].totalAmount = "RM " + row["total_amount"].ToString();
                             itemList[i].orderDate = row["order_date"].ToString();
                             itemList[i].orderStatus = row["order_status"].ToString();
-
+                            itemList[i].urgent = bool.Parse(row["urgent"].ToString());
 
 
 
@@ -70,7 +70,7 @@ namespace WindowsFormsApp1.Student_UserControl
                                 {
                                     string productName = name["product_name"].ToString();
                                     itemList[i].orderDetails = itemList[i].orderDetails + productName + " * " + detail["quantity"] + "\n";
-                                    itemList[i].Height += 10;
+                                    itemList[i].Height += 15;
 
                                     // need new condition > data table name
                                 }

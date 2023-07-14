@@ -111,19 +111,25 @@ namespace WindowsFormsApp1.Student_UserControl
         {
             DateTime now = DateTime.Now;
             Connection con = new Connection();
+            Boolean urgent = false;
 
             if (ConnectionState.Closed == con.connect.State)
             {
                 con.connect.Open();
             }
 
-            using (SqlCommand cmd = new SqlCommand("INSERT into _Order(user_id, order_date, total_amount, order_status, payment) VALUES (@user_id, @order_date, @total_amount, @order_status, @payment)", con.connect))
+            if (urgentCheckBox.Checked)
+            {
+                urgent = true;
+            }
+            using (SqlCommand cmd = new SqlCommand("INSERT into _Order(user_id, order_date, total_amount, order_status, payment, urgent) VALUES (@user_id, @order_date, @total_amount, @order_status, @payment, @urgent)", con.connect))
             {
                 cmd.Parameters.AddWithValue("@user_id", userID);
-                cmd.Parameters.AddWithValue("order_date", now);
-                cmd.Parameters.AddWithValue("total_amount", calculateTotal());
-                cmd.Parameters.AddWithValue("order_status", "pending");
-                cmd.Parameters.AddWithValue("payment", false);
+                cmd.Parameters.AddWithValue("@order_date", now);
+                cmd.Parameters.AddWithValue("@total_amount", calculateTotal());
+                cmd.Parameters.AddWithValue("@order_status", "pending");
+                cmd.Parameters.AddWithValue("@payment", false);
+                cmd.Parameters.AddWithValue("@urgent", urgent);
                 cmd.ExecuteNonQuery();
             }
 
@@ -169,6 +175,10 @@ namespace WindowsFormsApp1.Student_UserControl
             {
                 totalAmount += decimal.Parse(item.lbl_totalAmount.Text.Replace("RM", String.Empty));
             }
+            if (urgentCheckBox.Checked)
+            {
+                totalAmount += (totalAmount / 100 * 30);
+            }
             lbl_total.Text = string.Format(new CultureInfo("en-MY"), "{0:C2}", totalAmount);
             return totalAmount;
         }
@@ -178,5 +188,9 @@ namespace WindowsFormsApp1.Student_UserControl
 
         }
 
+        private void urgentCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            calculateTotal();
+        }
     }
 }
