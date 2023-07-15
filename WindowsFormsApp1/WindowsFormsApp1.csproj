@@ -60,22 +60,22 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dynamic Panel\Product Page\productLayout.cs">
+    <Compile Include="Dynamic Panel\Student Layout\productLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dynamic Panel\Product Page\productLayout.Designer.cs">
+    <Compile Include="Dynamic Panel\Student Layout\productLayout.Designer.cs">
       <DependentUpon>productLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dynamic Panel\Product Page\cartItemLayout.cs">
+    <Compile Include="Dynamic Panel\Student Layout\cartItemLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dynamic Panel\Product Page\cartItemLayout.Designer.cs">
+    <Compile Include="Dynamic Panel\Student Layout\cartItemLayout.Designer.cs">
       <DependentUpon>cartItemLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dynamic Panel\Product Page\studentHistoryLayout.cs">
+    <Compile Include="Dynamic Panel\Student Layout\studentHistoryLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dynamic Panel\Product Page\studentHistoryLayout.Designer.cs">
+    <Compile Include="Dynamic Panel\Student Layout\studentHistoryLayout.Designer.cs">
       <DependentUpon>studentHistoryLayout.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
@@ -96,17 +96,17 @@
     <Compile Include="StudentForm.Designer.cs">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="WorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="WorkerForm.Designer.cs">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,13 +138,13 @@
     <Compile Include="Student_UserControl\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dynamic Panel\Product Page\productLayout.resx">
+    <EmbeddedResource Include="Dynamic Panel\Student Layout\productLayout.resx">
       <DependentUpon>productLayout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dynamic Panel\Product Page\cartItemLayout.resx">
+    <EmbeddedResource Include="Dynamic Panel\Student Layout\cartItemLayout.resx">
       <DependentUpon>cartItemLayout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dynamic Panel\Product Page\studentHistoryLayout.resx">
+    <EmbeddedResource Include="Dynamic Panel\Student Layout\studentHistoryLayout.resx">
       <DependentUpon>studentHistoryLayout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
@@ -156,11 +156,11 @@
     <EmbeddedResource Include="StudentForm.resx">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="WorkerForm.resx">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

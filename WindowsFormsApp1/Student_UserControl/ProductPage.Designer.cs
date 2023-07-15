@@ -34,20 +34,19 @@
             // panelContainer
             // 
             this.panelContainer.AutoScroll = true;
-            this.panelContainer.Location = new System.Drawing.Point(140, 38);
+            this.panelContainer.Location = new System.Drawing.Point(105, 31);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1532, 698);
+            this.panelContainer.Size = new System.Drawing.Size(1149, 589);
             this.panelContainer.TabIndex = 0;
             // 
             // ProductPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductPage";
-            this.Size = new System.Drawing.Size(1680, 750);
+            this.Size = new System.Drawing.Size(1260, 630);
             this.Load += new System.EventHandler(this.ProductPage_Load);
             this.ResumeLayout(false);
 
