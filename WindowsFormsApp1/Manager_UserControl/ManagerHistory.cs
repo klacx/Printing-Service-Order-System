@@ -33,7 +33,7 @@ namespace WindowsFormsApp1.Manager_UserControl
 
             Connection con = new Connection();
             ClassBLL objBLL = new ClassBLL();
-            DataTable dt = objBLL.getTableItems("_Order", " ORDER BY CASE order_status WHEN 'pending' THEN 1 WHEN 'progressing' THEN 2 WHEN 'completed' THEN 3 END ASC, urgent DESC, order_id ASC");
+            DataTable dt = objBLL.getTableItems("_Order", " ORDER BY CASE order_status WHEN 'pending' THEN 1 WHEN 'progressing' THEN 2 WHEN 'completed' THEN 3 END ASC, order_id ASC");
             if (dt != null)
             {
                 if (dt.Rows.Count > 0)

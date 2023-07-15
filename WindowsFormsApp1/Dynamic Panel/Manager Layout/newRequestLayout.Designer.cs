@@ -63,7 +63,7 @@
             // lbl_totalAmount
             // 
             this.lbl_totalAmount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalAmount.Location = new System.Drawing.Point(592, 15);
+            this.lbl_totalAmount.Location = new System.Drawing.Point(601, 15);
             this.lbl_totalAmount.Name = "lbl_totalAmount";
             this.lbl_totalAmount.Size = new System.Drawing.Size(115, 21);
             this.lbl_totalAmount.TabIndex = 14;
@@ -117,6 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lbl_user);
             this.Controls.Add(this.workerComboBox);
             this.Controls.Add(this.assignBtn);

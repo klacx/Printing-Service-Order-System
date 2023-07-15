@@ -22,10 +22,10 @@ namespace WindowsFormsApp1.Manager_UserControl
 
         private void newRequestPage_Load(object sender, EventArgs e)
         {
-            AllOrderUserControl();
+             newRequestPageUserControl();
         }
 
-        public void AllOrderUserControl()
+        public void newRequestPageUserControl()
         {
             panelContainer.Controls.Clear();
 

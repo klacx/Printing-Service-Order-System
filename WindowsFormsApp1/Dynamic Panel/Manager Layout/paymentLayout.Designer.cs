@@ -37,20 +37,18 @@
             // 
             // lbl_orderDate
             // 
-            this.lbl_orderDate.AutoSize = true;
             this.lbl_orderDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_orderDate.Location = new System.Drawing.Point(759, 14);
+            this.lbl_orderDate.Location = new System.Drawing.Point(713, 14);
             this.lbl_orderDate.Name = "lbl_orderDate";
-            this.lbl_orderDate.Size = new System.Drawing.Size(94, 21);
+            this.lbl_orderDate.Size = new System.Drawing.Size(199, 21);
             this.lbl_orderDate.TabIndex = 10;
             this.lbl_orderDate.Text = "order date";
             this.lbl_orderDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_amount
             // 
-            this.lbl_amount.AutoSize = true;
             this.lbl_amount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_amount.Location = new System.Drawing.Point(539, 14);
+            this.lbl_amount.Location = new System.Drawing.Point(525, 14);
             this.lbl_amount.Name = "lbl_amount";
             this.lbl_amount.Size = new System.Drawing.Size(115, 21);
             this.lbl_amount.TabIndex = 8;
@@ -61,7 +59,7 @@
             // 
             this.lbl_orderDetails.AutoSize = true;
             this.lbl_orderDetails.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_orderDetails.Location = new System.Drawing.Point(172, 14);
+            this.lbl_orderDetails.Location = new System.Drawing.Point(181, 14);
             this.lbl_orderDetails.Name = "lbl_orderDetails";
             this.lbl_orderDetails.Size = new System.Drawing.Size(74, 21);
             this.lbl_orderDetails.TabIndex = 7;
@@ -107,6 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.lbl_orderDate);
             this.Controls.Add(this.lbl_amount);
