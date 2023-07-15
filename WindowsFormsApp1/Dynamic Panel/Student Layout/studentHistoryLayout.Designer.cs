@@ -72,11 +72,10 @@
             // 
             // lbl_orderStatus
             // 
-            this.lbl_orderStatus.AutoSize = true;
             this.lbl_orderStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_orderStatus.Location = new System.Drawing.Point(1040, 14);
+            this.lbl_orderStatus.Location = new System.Drawing.Point(1014, 14);
             this.lbl_orderStatus.Name = "lbl_orderStatus";
-            this.lbl_orderStatus.Size = new System.Drawing.Size(57, 21);
+            this.lbl_orderStatus.Size = new System.Drawing.Size(138, 21);
             this.lbl_orderStatus.TabIndex = 4;
             this.lbl_orderStatus.Text = "status";
             this.lbl_orderStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

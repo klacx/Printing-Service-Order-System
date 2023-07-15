@@ -141,6 +141,12 @@ namespace WindowsFormsApp1.Student_UserControl
             ClassBLL bll2 = new ClassBLL();
             DataTable cdt = bll2.getTableItems("ShoppingCartItem", " WHERE cart_id='" + cartID + "'");
 
+            using (SqlCommand WAcmd = new SqlCommand("INSERT into WorkerAssignment(order_id) VALUES (@order_id)", con.connect))
+            {
+                WAcmd.Parameters.AddWithValue("@order_id", order_id);
+                WAcmd.ExecuteNonQuery();
+            }
+
             List<string> product_id = new List<string>();
             List<int> quantity = new List<int>();
             foreach (DataRow row in cdt.Rows)

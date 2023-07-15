@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Manager_UserControl;
 using WindowsFormsApp1.Student_UserControl;
 
 namespace WindowsFormsApp1 
@@ -18,8 +19,11 @@ namespace WindowsFormsApp1
         public ManagerForm(string user_id)
         {
             InitializeComponent();
-
             userID = user_id;
+
+            object sender = newRequestBtn;
+            EventArgs e = EventArgs.Empty;
+            newRequestBtn_Click(sender, e);
         }
 
         private void ManagerForm_Load(object sender, EventArgs e)
@@ -54,6 +58,43 @@ namespace WindowsFormsApp1
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
+        }
+
+        private void kryptonButton3_Click(object sender, EventArgs e)
+        {
+            if (!panelContainer.Controls[0].ToString().Contains("PaymentPage"))
+            {
+                PaymentPage PP = new PaymentPage();
+                addUserControl(PP);
+            }
+        
+        }
+
+        private void orderBtn_Click(object sender, EventArgs e)
+        {
+            if (!panelContainer.Controls[0].ToString().Contains("ManagerHistory"))
+            {
+                ManagerHistory AOP = new ManagerHistory();
+                addUserControl(AOP);
+            }
+        }
+
+        private void newRequestBtn_Click(object sender, EventArgs e)
+        {
+            if (panelContainer.Controls.Count >0 )
+            {
+                if (!panelContainer.Controls[0].ToString().Contains("newRequestPage"))
+                {
+                    newRequestPage NRP = new newRequestPage();
+                    addUserControl(NRP);
+                }
+            }
+            else 
+            {
+                newRequestPage NRP = new newRequestPage();
+                addUserControl(NRP);
+            }
+
         }
     }
 }

@@ -60,6 +60,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dynamic Panel\Manager Layout\orderLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dynamic Panel\Manager Layout\orderLayout.Designer.cs">
+      <DependentUpon>orderLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic Panel\Manager Layout\paymentLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dynamic Panel\Manager Layout\paymentLayout.Designer.cs">
+      <DependentUpon>paymentLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic Panel\Manager Layout\newRequestLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dynamic Panel\Manager Layout\newRequestLayout.Designer.cs">
+      <DependentUpon>newRequestLayout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dynamic Panel\Student Layout\productLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -78,6 +96,12 @@
     <Compile Include="Dynamic Panel\Student Layout\studentHistoryLayout.Designer.cs">
       <DependentUpon>studentHistoryLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dynamic Panel\Worker Layout\NewRequestPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dynamic Panel\Worker Layout\NewRequestPage.Designer.cs">
+      <DependentUpon>NewRequestPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +113,24 @@
     </Compile>
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_UserControl\ManagerHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager_UserControl\ManagerHistory.Designer.cs">
+      <DependentUpon>ManagerHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_UserControl\newRequestPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager_UserControl\newRequestPage.Designer.cs">
+      <DependentUpon>newRequestPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_UserControl\PaymentPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager_UserControl\PaymentPage.Designer.cs">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentForm.cs">
       <SubType>Form</SubType>
@@ -138,6 +180,15 @@
     <Compile Include="Student_UserControl\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dynamic Panel\Manager Layout\orderLayout.resx">
+      <DependentUpon>orderLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic Panel\Manager Layout\paymentLayout.resx">
+      <DependentUpon>paymentLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic Panel\Manager Layout\newRequestLayout.resx">
+      <DependentUpon>newRequestLayout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dynamic Panel\Student Layout\productLayout.resx">
       <DependentUpon>productLayout.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,11 +198,23 @@
     <EmbeddedResource Include="Dynamic Panel\Student Layout\studentHistoryLayout.resx">
       <DependentUpon>studentHistoryLayout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic Panel\Worker Layout\NewRequestPage.resx">
+      <DependentUpon>NewRequestPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_UserControl\ManagerHistory.resx">
+      <DependentUpon>ManagerHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_UserControl\newRequestPage.resx">
+      <DependentUpon>newRequestPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_UserControl\PaymentPage.resx">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentForm.resx">
       <DependentUpon>StudentForm.cs</DependentUpon>
@@ -232,6 +295,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gainsboro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

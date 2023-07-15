@@ -82,6 +82,10 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             QuantityText -= 1;
             quantityTextBox.Text = QuantityText.ToString();
             addCartItem(product_id, int.Parse(quantityTextBox.Text));
+            if (int.Parse(quantityTextBox.Text) < 1)
+            { DecreaseBtn.Enabled = false; }
+            else
+            { DecreaseBtn.Enabled = true; }
         }
         public void addCartItem(string product_id, int quantity)
         {
@@ -107,11 +111,19 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             QuantityText += 1;
             quantityTextBox.Text = QuantityText.ToString();
             addCartItem(product_id, int.Parse(quantityTextBox.Text));
+            if (int.Parse(quantityTextBox.Text) < 1)
+            { DecreaseBtn.Enabled = false; }
+            else
+            { DecreaseBtn.Enabled = true; }
         }
 
         private void quantityTextBox_LossFocus(object sender, EventArgs e)
         {
             addCartItem(product_id, int.Parse(quantityTextBox.Text));
+            if (int.Parse(quantityTextBox.Text) < 1)
+            { DecreaseBtn.Enabled = false; }
+            else
+            { DecreaseBtn.Enabled = true; }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)

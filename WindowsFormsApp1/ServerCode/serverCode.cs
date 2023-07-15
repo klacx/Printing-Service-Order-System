@@ -11,8 +11,9 @@ namespace WindowsFormsApp1.ServerCode
 {
     internal class Connection
     {
-        public SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Documents\demoDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+        public SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Documents\demoDatabase.mdf;Integrated Security=True;Connect Timeout=30; Max Pool Size=2000");
     }
+
     class classDAL
     {
         public DataTable ReadItemsTable(string tableName, string condition)
