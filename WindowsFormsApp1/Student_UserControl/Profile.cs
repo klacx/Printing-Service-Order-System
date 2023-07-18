@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.UI.Design.WebControls;
 using System.Windows.Forms;
 using WindowsFormsApp1.Dynamic_Panel.Product_Page;
 using WindowsFormsApp1.Properties;
@@ -30,7 +32,7 @@ namespace WindowsFormsApp1.Student_UserControl
         private void Profile_Load(object sender, EventArgs e)
         {
 
-                List<User> userList = userDataFromMDF(); 
+                List<User> userList = SyncWithDatabase(); 
 
                 foreach (User user in userList)
                 {
@@ -48,7 +50,7 @@ namespace WindowsFormsApp1.Student_UserControl
                     lastNameTextBox.Text = user.last_name ?? string.Empty;
                     phoneNumberTextBox.Text = user.phone_number ?? string.Empty;
                     genderTextBox.SelectedItem = user.gender?.Replace(" ", string.Empty);
-                    dobTimePicker.Value = user.dob ?? DateTime.Now;
+                    dobTimePicker.Value = user.dob.HasValue ? user.dob.Value : DateTime.Now;
                     emailTextBox.Text = user.email ?? string.Empty;
                 }
             
@@ -56,20 +58,19 @@ namespace WindowsFormsApp1.Student_UserControl
 
         public class User
         {
-            public string password { get; set; }
             public string email { get; set; }
             public string first_name { get; set; }
             public string last_name { get; set; }
             public string phone_number { get; set; }
-            public DateTime? dob { get; set; }
             public string gender { get; set; }
-
+            public string password { get; set; }
+            public DateTime? dob { get; set; }
 
         }
 
-        public List<User> userDataFromMDF()
+        public List<User> SyncWithDatabase()
         {
-            List<User> userListFromMDF = new List<User>();
+            List<User> data = new List<User>();
 
             ClassBLL objBLL = new ClassBLL();
             DataTable dt = objBLL.getTableItems("_User", (" WHERE user_id ='" + userID + "'"));
@@ -81,17 +82,43 @@ namespace WindowsFormsApp1.Student_UserControl
                     first_name = row["first_name"] != DBNull.Value ? row["first_name"].ToString() : null,
                     last_name = row["last_name"] != DBNull.Value ? row["last_name"].ToString() : null,
                     phone_number = row["phone_number"] != DBNull.Value ? row["phone_number"].ToString() : null,
-                    dob = row["dob"] != DBNull.Value ? (DateTime)row["dob"] : (DateTime?)null,
                     gender = row["gender"] != DBNull.Value ? row["gender"].ToString() : null
                 };
-                userListFromMDF.Add(user);
+                data.Add(user);
+            }
+            return data;
+        }
+        public List<object> userDataFromMDF()
+        {
+            List<object> userListFromMDF = new List<object>();
+            PropertyInfo[] properties = typeof(User).GetProperties();
+
+            ClassBLL objBLL = new ClassBLL();
+            DataTable dt = objBLL.getTableItems("_User", (" WHERE user_id ='" + userID + "'"));
+            foreach (DataRow row in dt.Rows)
+            {
+                User user = new User
+                {
+                    email = row["email"] != DBNull.Value ? row["email"].ToString() : null,
+                    first_name = row["first_name"] != DBNull.Value ? row["first_name"].ToString() : null,
+                    last_name = row["last_name"] != DBNull.Value ? row["last_name"].ToString() : null,
+                    phone_number = row["phone_number"] != DBNull.Value ? row["phone_number"].ToString() : null,
+                    gender = row["gender"] != DBNull.Value ? row["gender"].ToString() : null
+                };
+
+                foreach (PropertyInfo property in properties) 
+                {
+                    object value = property.GetValue(user);
+                    userListFromMDF.Add(value);
+                }
             }
             return userListFromMDF;
         }
 
-        public List<User> userDataFromUser()
+        public List<object> userDataFromUser()
         {
-            List<User> userListFromUser = new List<User>();
+            List<object> userListFromUser = new List<object>();
+            PropertyInfo[] properties = typeof(User).GetProperties();
 
 
             User user = new User
@@ -100,11 +127,14 @@ namespace WindowsFormsApp1.Student_UserControl
                 first_name = firstNameTextBox.Text,
                 last_name = lastNameTextBox.Text,
                 phone_number = phoneNumberTextBox.Text,
-                dob = dobTimePicker.Value,
                 gender = genderTextBox.Text.Replace(" ", string.Empty)
             };
 
-            userListFromUser.Add(user);
+            foreach (PropertyInfo property in properties)
+            {
+                object value = property.GetValue(user);
+                userListFromUser.Add(value);
+            }
             return userListFromUser;
         }
 
@@ -116,18 +146,37 @@ namespace WindowsFormsApp1.Student_UserControl
             return match.Success;
         }
 
-        private void firstNameTextBox_TextChanged(object sender, EventArgs e)
+        private void firstNameTextBox_LostFocus(object sender, EventArgs e)
         {
-            List<User> userList = userDataFromMDF();
+            compare();
+        }
 
-            foreach (User user in userList)
+        private void compare() 
+        {
+            List<object> MDF = userDataFromMDF();
+            List<object> FUS = userDataFromUser();
+            List<bool> results = new List<bool>();
+
+            for (int i = 0; i < 5; i++) 
             {
-                fn = user.first_name ?? string.Empty;
+                bool result = MDF[i].ToString().Replace(" ", String.Empty) == FUS[i].ToString().Replace(" ", String.Empty);
+                results.Add(result);
             }
 
-            if (firstNameTextBox.Text != fn) { updateBtn.Enabled = true; }
+            if (results.Contains(false))
+            {
+                updateBtn.Enabled = true;
+            }
+            else 
+            { updateBtn.Enabled = false; }
+        }
+
+        private void phoneNumberTextBox_LostFocus(object sender, EventArgs e)
+        {
+            compare();
         }
     }
+
 
     
 }

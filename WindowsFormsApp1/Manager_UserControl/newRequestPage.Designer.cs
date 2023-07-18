@@ -115,7 +115,7 @@
             // 
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_id.Location = new System.Drawing.Point(6, 8);
+            this.lbl_id.Location = new System.Drawing.Point(15, 8);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(72, 21);
             this.lbl_id.TabIndex = 6;

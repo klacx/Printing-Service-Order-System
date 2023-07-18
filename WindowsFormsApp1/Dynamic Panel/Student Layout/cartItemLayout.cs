@@ -101,7 +101,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                 cmd.Parameters.AddWithValue("@quantity", quantity);
                 cmd.Parameters.AddWithValue("@product_id", product_id);
                 cmd.ExecuteNonQuery();
-                Refresh();
+                RefreshControl();
             }
         }
 
@@ -140,11 +140,11 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                 cmd.Parameters.AddWithValue("@product_id", product_id);
                 cmd.ExecuteNonQuery();
             }
-            Refresh();
+            RefreshControl();
             this.Parent.Controls.Remove(this);
         }
 
-        public void Refresh() 
+        public void RefreshControl() 
         {
             int Quantity = 0;
             decimal Price = 0;

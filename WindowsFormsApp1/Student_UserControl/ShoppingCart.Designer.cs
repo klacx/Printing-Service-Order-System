@@ -48,9 +48,9 @@
             // panelContainer
             // 
             this.panelContainer.AutoScroll = true;
-            this.panelContainer.Location = new System.Drawing.Point(57, 52);
+            this.panelContainer.Location = new System.Drawing.Point(57, 60);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1150, 490);
+            this.panelContainer.Size = new System.Drawing.Size(1150, 482);
             this.panelContainer.TabIndex = 0;
             // 
             // panel1

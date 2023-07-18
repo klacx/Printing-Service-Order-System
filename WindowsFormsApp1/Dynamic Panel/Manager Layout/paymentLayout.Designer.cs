@@ -94,7 +94,7 @@
             this.acceptBtn.StateCommon.Back.ColorAngle = 45F;
             this.acceptBtn.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
             this.acceptBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.acceptBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acceptBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acceptBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.acceptBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.acceptBtn.TabIndex = 11;
@@ -112,7 +112,7 @@
             this.Controls.Add(this.lbl_orderDetails);
             this.Controls.Add(this.lbl_id);
             this.Name = "paymentLayout";
-            this.Size = new System.Drawing.Size(1150, 48);
+            this.Size = new System.Drawing.Size(1176, 48);
             this.Load += new System.EventHandler(this.paymentLayout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

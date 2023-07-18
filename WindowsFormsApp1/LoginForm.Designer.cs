@@ -42,9 +42,10 @@
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(56, 267);
+            this.usernameTextBox.Location = new System.Drawing.Point(75, 329);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(208, 39);
+            this.usernameTextBox.Size = new System.Drawing.Size(277, 44);
             this.usernameTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.usernameTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -54,6 +55,7 @@
             this.usernameTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTextBox.TabIndex = 0;
             this.usernameTextBox.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
+            this.usernameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameTextBox_KeyDown);
             // 
             // kryptonPalette1
             // 
@@ -75,7 +77,8 @@
             // 
             // kryptonButton1
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(114, 383);
+            this.kryptonButton1.Location = new System.Drawing.Point(152, 471);
+            this.kryptonButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -89,7 +92,7 @@
             this.kryptonButton1.OverrideDefault.Border.Rounding = 20;
             this.kryptonButton1.OverrideDefault.Border.Width = 1;
             this.kryptonButton1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonButton1.Size = new System.Drawing.Size(92, 34);
+            this.kryptonButton1.Size = new System.Drawing.Size(123, 42);
             this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
             this.kryptonButton1.StateCommon.Back.ColorAngle = 45F;
@@ -104,7 +107,7 @@
             this.kryptonButton1.StateCommon.Border.Width = 1;
             this.kryptonButton1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Neo Sans", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton1.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(145)))), ((int)(((byte)(198)))));
             this.kryptonButton1.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(206)))));
             this.kryptonButton1.StatePressed.Back.ColorAngle = 135F;
@@ -130,13 +133,15 @@
             this.kryptonButton1.TabIndex = 2;
             this.kryptonButton1.Values.Text = "Log In";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            this.kryptonButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.kryptonButton1_KeyDown);
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(56, 325);
+            this.passwordTextBox.Location = new System.Drawing.Point(75, 400);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '●';
-            this.passwordTextBox.Size = new System.Drawing.Size(208, 39);
+            this.passwordTextBox.Size = new System.Drawing.Size(277, 44);
             this.passwordTextBox.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.passwordTextBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -146,6 +151,7 @@
             this.passwordTextBox.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTextBox.TabIndex = 3;
             this.passwordTextBox.UseSystemPasswordChar = true;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // label1
             // 
@@ -153,9 +159,10 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(65, 258);
+            this.label1.Location = new System.Drawing.Point(87, 318);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -165,9 +172,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(65, 316);
+            this.label2.Location = new System.Drawing.Point(87, 389);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(80, 23);
             this.label2.TabIndex = 5;
             this.label2.Text = "Password";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -175,20 +183,21 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.APU__1__removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(41, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(55, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(239, 210);
+            this.pictureBox1.Size = new System.Drawing.Size(319, 258);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(320, 486);
+            this.ClientSize = new System.Drawing.Size(427, 598);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label2);
@@ -197,6 +206,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";

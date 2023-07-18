@@ -35,6 +35,11 @@ namespace WindowsFormsApp1
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
+            Login();
+        }
+
+        private void Login() 
+        {
             Connection con = new Connection();
             SqlDataAdapter SDA = new SqlDataAdapter("SELECT roles FROM _User WHERE user_id='" + usernameTextBox.Text + "' AND password='" + passwordTextBox.Text + "'", con.connect);
             DataTable DT = new DataTable();
@@ -75,6 +80,25 @@ namespace WindowsFormsApp1
                     manager.Show();
                 }
             }
+        }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            { Login(); }
+            
+        }
+
+        private void usernameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            { Login(); }
+        }
+
+        private void kryptonButton1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            { Login(); }
         }
     }
 }
