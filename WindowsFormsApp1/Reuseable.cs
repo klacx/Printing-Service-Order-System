@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static WindowsFormsApp1.Student_UserControl.Profile;
+using WindowsFormsApp1.Properties;
 
 namespace WindowsFormsApp1.ServerCode
 {
@@ -56,5 +60,29 @@ namespace WindowsFormsApp1.ServerCode
                 return null;
             }
         }
+    }
+
+    class ClassIcon
+    {
+        public void LoadIcon(string userID, RoundPictureBox icon)
+        {
+            ClassBLL bll = new ClassBLL();
+            DataTable dt = bll.getTableItems("_User", " WHERE user_id='" + userID + "'");
+            foreach (DataRow dr in dt.Rows)
+            {
+                try
+                {
+                    using (MemoryStream ms = new MemoryStream(dr["user_img"] != DBNull.Value ? (byte[])dr["user_img"] : null))
+                    {
+                        icon.Image = new Bitmap(ms);
+                    }
+                }
+                catch
+                {
+                    icon.Image = Resources.defaultAvatar;
+                }
+            }
+        }
+
     }
 }

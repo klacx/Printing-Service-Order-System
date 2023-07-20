@@ -155,7 +155,7 @@
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ServerCode\serverCode.cs" />
+    <Compile Include="Reuseable.cs" />
     <Compile Include="Student_UserControl\HistoryPage.cs">
       <SubType>UserControl</SubType>
     </Compile>

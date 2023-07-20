@@ -122,7 +122,6 @@
             this.print.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.print.TabIndex = 13;
             this.print.TabStop = false;
-            this.print.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // orderLayout
             // 

@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.Expando;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using WindowsFormsApp1.Properties;
+using WindowsFormsApp1.ServerCode;
 using WindowsFormsApp1.Student_UserControl;
+using static WindowsFormsApp1.Student_UserControl.Profile;
 
 namespace WindowsFormsApp1
 {
@@ -37,6 +41,8 @@ namespace WindowsFormsApp1
         private void StudentForm_Load(object sender, EventArgs e)
         {
             userPanel.Visible = false;
+            ClassIcon classIcon = new ClassIcon();
+            classIcon.LoadIcon(userID, AvatarIcon);
         }
 
         private void roundPictureBox1_Click(object sender, EventArgs e)

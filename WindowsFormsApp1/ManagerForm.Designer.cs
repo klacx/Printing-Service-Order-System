@@ -203,6 +203,7 @@
             // 
             // userPanel
             // 
+            this.userPanel.BackColor = System.Drawing.Color.Transparent;
             this.userPanel.Controls.Add(this.LogOutBtn);
             this.userPanel.Controls.Add(this.ProfileBtn);
             this.userPanel.Location = new System.Drawing.Point(1127, 1);
