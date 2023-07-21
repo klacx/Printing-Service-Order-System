@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Web.UI.Design.WebControls;
 using System.Windows.Forms;
-using WindowsFormsApp1.Dynamic_Panel.Product_Page;
 using WindowsFormsApp1.Properties;
 using WindowsFormsApp1.ServerCode;
-using static WindowsFormsApp1.Student_UserControl.Profile;
 
 namespace WindowsFormsApp1.Student_UserControl
 {
@@ -25,10 +18,17 @@ namespace WindowsFormsApp1.Student_UserControl
         public string userID;
         public bool imageUploaded = false;
         public string query;
+        public List<bool> results = new List<bool>();
+        public List<bool> final_result = new List<bool>();
+        public bool passwordChanged;
+        public event EventHandler UpdateBtnClicked;
         public Profile(string user_id)
+
         {
             InitializeComponent();
             userID = user_id;
+            TextBoxLeaveEvent();
+            TextBoxKeyDownEvent();
         }
 
         private void Profile_Load(object sender, EventArgs e)
@@ -153,11 +153,6 @@ namespace WindowsFormsApp1.Student_UserControl
             return match.Success;
         }
 
-        private void firstNameTextBox_LostFocus(object sender, EventArgs e)
-        {
-            compare();
-        }
-
         public string password;
         public DateTime dob;
         public string DateString;
@@ -165,13 +160,52 @@ namespace WindowsFormsApp1.Student_UserControl
         {
             List<object> MDF = userDataFromMDF();
             List<object> FUS = userDataFromUser();
-            List<bool> results = new List<bool>();
-            List<bool> final_result = new List<bool>();
+            results.Clear();
+            final_result.Clear();
+            passwordChanged = false;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
-                bool result = MDF[i].ToString().Replace(" ", String.Empty) == FUS[i].ToString().Replace(" ", String.Empty);
-                results.Add(result);
+                if (MDF[i] !=null)
+                {
+                    bool result = MDF[i].ToString().Replace(" ", String.Empty) == FUS[i].ToString().Replace(" ", String.Empty);
+                    results.Add(result);
+                }
+                else 
+                {
+                    if (FUS[i].ToString().Length > 0)
+                    {
+                        results.Add(false);
+                    }
+                    else
+                    { 
+                        results.Add(true); 
+                    }
+                }
+            }
+
+            if (genderTextBox.SelectedIndex == -1)
+            {
+                results.Add(true);
+            }
+            else 
+            {
+                if (MDF[4] == null)
+                {
+                    results.Add(false);
+                }
+                else
+                {
+                    if (MDF[4].ToString().Replace(" ", String.Empty) == FUS[4].ToString().Replace(" ", String.Empty))
+                    {
+                        results.Add(true);
+                    }
+                    else
+                    {
+                        results.Add(false);
+                    }
+                }
+
             }
 
             if (results.Contains(false))
@@ -188,11 +222,18 @@ namespace WindowsFormsApp1.Student_UserControl
             foreach (DataRow dr in dt.Rows)
             {
                 password = dr["password"].ToString();
-                dob = DateTime.Parse(dr["dob"].ToString());
-                DateString = dob.ToString("yyyy");
+                if (dr["dob"].ToString().Length < 1)
+                {
+                    DateString = "0000";
+                }
+                else 
+                {
+                    dob = DateTime.Parse(dr["dob"].ToString());
+                    DateString = dob.ToString("yyyy");
+                }
             }
 
-            if (int.Parse(DateString) < 1500)
+            if (int.Parse(DateString) < 1900)
             {
                 final_result.Add(true);
             }
@@ -216,6 +257,7 @@ namespace WindowsFormsApp1.Student_UserControl
                     else
                     {
                         final_result.Add(false);
+                        passwordChanged = true;
                     }
                 }
                 else
@@ -243,80 +285,94 @@ namespace WindowsFormsApp1.Student_UserControl
             }
         }
 
-        private void phoneNumberTextBox_LostFocus(object sender, EventArgs e)
-        {
-            compare();
-        }
-
         public void updateBtn_Click(object sender, EventArgs e)
         {
-            if (NPTextBox.Text.Length > 0)
+            query = "UPDATE _User SET ";
+
+            if (results[0] == false)
             {
-                if (NPTextBox.Text == CNPTextBox.Text)
-                {
-                    if (NPTextBox.Text == password)
-                    {
-                        if (imageUploaded)
-                        {
-                            query = query = "UPDATE _User SET email = @email, first_name = @first_name, last_name = @last_name, phone_number = @phone_number, user_img = @userImage, dob= @dob, gender=@gender WHERE user_id = @user_id";
-                        }
-                        else
-                        {
-                            query = "UPDATE _User SET email = @email, first_name = @first_name, last_name = @last_name, phone_number = @phone_number, dob= @dob, gender = @gender WHERE user_id = @user_id";
-                        }
-                    }
-                    else 
-                    {
-                        if (imageUploaded)
-                        {
-                            query = "UPDATE _User SET password ='" + NPTextBox.Text + "', email = @email, first_name = @first_name, last_name = @last_name, phone_number = @phone_number, user_img = @userImage, dob= '@dob', gender=@gender WHERE user_id = @user_id";
-                        }
-                        else
-                        {
-                            query = "UPDATE _User SET password ='" + NPTextBox.Text + "', email = @email, first_name = @first_name, last_name = @last_name, phone_number = @phone_number, dob= @dob, gender=@gender WHERE user_id = @user_id";
-                        }
-                    }
-                }
-                else 
-                { 
-                    //nothing
-                }
+                query += " email = @email,";
             }
-            else 
+            if (results[1] == false)
             {
-                if (imageUploaded)
-                {
-                    query = "UPDATE _User SET email = @email, first_name = @first_name, last_name = @last_name, phone_number = @phone_number, user_img = @userImage, dob= @dob, gender=@gender WHERE user_id = @user_id";
-                }
-                else
-                {
-                    query = "UPDATE _User SET email = @email, first_name = @first_name, last_name = @last_name, phone_number = @phone_number, dob= @dob, gender= @gender WHERE user_id = @user_id";
-                }
+                query += " first_name = @first_name,";
+            }
+            if (results[2] == false)
+            {
+                query += " last_name = @last_name";
+            }
+            if (results[3] == false)
+            {
+                query += " phone_number = @phone_number,";
+            }
+            if (results[4] == false)
+            {
+                query += " gender = @gender,";
+            }
+            if (imageUploaded)
+            {
+                query += " user_img = @user_img,";
+            }
+            if (passwordChanged)
+            {
+                query += " password = @password,";
             }
 
+            query = query.Remove(query.Length - 1);
+
+            query += " WHERE user_id= @user_id";
 
             Connection con = new Connection();
             con.connect.Open();
             using (SqlCommand cmd = new SqlCommand(query, con.connect))
             {
-                cmd.Parameters.AddWithValue("@email", emailTextBox.Text);
-                cmd.Parameters.AddWithValue("@first_name", firstNameTextBox.Text);
-                cmd.Parameters.AddWithValue("@last_name", lastNameTextBox.Text);
-                cmd.Parameters.AddWithValue("@phone_number", phoneNumberTextBox.Text);
-                cmd.Parameters.AddWithValue("@dob", dobTimePicker.Value);
-                cmd.Parameters.AddWithValue("@gender", genderTextBox.SelectedItem.ToString());
-                cmd.Parameters.AddWithValue("@user_id", userID);
-
+                if (results[0] == false)
+                {
+                    cmd.Parameters.AddWithValue("@email", emailTextBox.Text);
+                }
+                if (results[1] == false)
+                {
+                    cmd.Parameters.AddWithValue("@first_name", firstNameTextBox.Text);
+                }
+                if (results[2] == false)
+                {
+                    cmd.Parameters.AddWithValue("@last_name", lastNameTextBox.Text);
+                }
+                if (results[3] == false)
+                {
+                    cmd.Parameters.AddWithValue("@phone_number", phoneNumberTextBox.Text);
+                }
+                if (results[4] == false)
+                {
+                    cmd.Parameters.AddWithValue("@gender", genderTextBox.SelectedItem.ToString());
+                }
                 if (imageUploaded)
                 {
-                    cmd.Parameters.AddWithValue("@userImage", userImage);
+                    cmd.Parameters.AddWithValue("@user_img", userImage);
                 }
+                if (passwordChanged)
+                {
+                    cmd.Parameters.AddWithValue("@password", NPTextBox.Text);
+                }
+                cmd.Parameters.AddWithValue("@user_id", userID);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Update Successfully");
             }
+
+            imageUploaded = false;
+
+            if(passwordChanged)
+            {
+                NPTextBox.Clear();
+                CNPTextBox.Clear();
+            }
+
+            compare();
+
+            UpdateBtnClicked?.Invoke(this, e);
         }
     
-        private void kryptonButton2_Click(object sender, EventArgs e)
+        private void UploadBtn_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -337,7 +393,42 @@ namespace WindowsFormsApp1.Student_UserControl
             compare();
         }
 
+        private void TextBoxLeaveEvent()
+        {
+            firstNameTextBox.Leave += TextBox_Leave;
+            lastNameTextBox.Leave += TextBox_Leave;
+            phoneNumberTextBox.Leave += TextBox_Leave;
+            emailTextBox.Leave += TextBox_Leave;
+            NPTextBox.Leave += TextBox_Leave;
+            CNPTextBox.Leave += TextBox_Leave;
+        }
 
+        private void TextBox_Leave(object sender, EventArgs e)
+        {
+            compare();
+        }
 
+        private void TextBoxKeyDownEvent()
+        {
+            firstNameTextBox.KeyDown += TextBox_KeyDown;
+            lastNameTextBox.KeyDown += TextBox_KeyDown;
+            phoneNumberTextBox.KeyDown += TextBox_KeyDown;
+            emailTextBox.KeyDown += TextBox_KeyDown;
+            NPTextBox.KeyDown += TextBox_KeyDown;
+            CNPTextBox.KeyDown += TextBox_KeyDown;
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                compare();
+            }
+        }
+
+        private void Profile_Click(object sender, EventArgs e)
+        {
+            compare();
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.ServerCode;
 using WindowsFormsApp1.Student_UserControl;
 
 namespace WindowsFormsApp1
@@ -25,6 +26,8 @@ namespace WindowsFormsApp1
         private void WorkerForm_Load(object sender, EventArgs e)
         {
             userPanel.Visible = false;
+            ClassIcon classIcon = new ClassIcon();
+            classIcon.LoadIcon(userID, AvatarIcon);
         }
 
         private void roundPictureBox1_Click(object sender, EventArgs e)
@@ -37,6 +40,7 @@ namespace WindowsFormsApp1
         {
             Profile Pf = new Profile(userID);
             addUserControl(Pf);
+            Pf.UpdateBtnClicked += WorkerForm_Load;
             userPanel.Visible = false;
         }
 

@@ -40,12 +40,12 @@
             this.LogOutBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.ProfileBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.roundPictureBox1 = new WindowsFormsApp1.RoundPictureBox();
+            this.AvatarIcon = new WindowsFormsApp1.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.userPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -295,16 +295,16 @@
             this.panelContainer.Size = new System.Drawing.Size(1260, 638);
             this.panelContainer.TabIndex = 11;
             // 
-            // roundPictureBox1
+            // AvatarIcon
             // 
-            this.roundPictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.photo_1603366615917_1fa6dad5c4fa;
-            this.roundPictureBox1.Location = new System.Drawing.Point(1210, 3);
-            this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.roundPictureBox1.TabIndex = 4;
-            this.roundPictureBox1.TabStop = false;
-            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
+            this.AvatarIcon.Image = global::WindowsFormsApp1.Properties.Resources.photo_1603366615917_1fa6dad5c4fa;
+            this.AvatarIcon.Location = new System.Drawing.Point(1210, 3);
+            this.AvatarIcon.Name = "AvatarIcon";
+            this.AvatarIcon.Size = new System.Drawing.Size(40, 40);
+            this.AvatarIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AvatarIcon.TabIndex = 4;
+            this.AvatarIcon.TabStop = false;
+            this.AvatarIcon.Click += new System.EventHandler(this.roundPictureBox1_Click);
             // 
             // AdminForm
             // 
@@ -312,7 +312,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.roundPictureBox1);
+            this.Controls.Add(this.AvatarIcon);
             this.Controls.Add(this.userPanel);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.panelContainer);
@@ -338,7 +338,7 @@
             this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.userPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,7 +354,7 @@
         private System.Windows.Forms.Panel userPanel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton LogOutBtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton ProfileBtn;
-        private RoundPictureBox roundPictureBox1;
+        private RoundPictureBox AvatarIcon;
         private System.Windows.Forms.Panel panelContainer;
     }
 }

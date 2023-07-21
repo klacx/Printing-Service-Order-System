@@ -45,28 +45,6 @@ namespace WindowsFormsApp1
             classIcon.LoadIcon(userID, AvatarIcon);
         }
 
-        private void roundPictureBox1_Click(object sender, EventArgs e)
-        {
-            if (userPanel.Visible == false) { userPanel.Visible = true; }
-            else if (userPanel.Visible == true) { userPanel.Visible = false; }
-        }
-
-        private void ProfileBtn_Click(object sender, EventArgs e)
-        {
-            Profile Pf = new Profile(userID);
-            addUserControl(Pf);
-            userPanel.Visible = false;
-        }
-
-        private void LogOutBtn_Click(object sender, EventArgs e)
-        {
-            userPanel.Visible = false;
-            this.Hide();
-            LoginForm Login = new LoginForm();
-            Login.Closed += (s, args) => this.Close();
-            Login.Show();
-        }
-
         private void ProductBtn_Click(object sender, EventArgs e)
         {
             ProductPage PP = new ProductPage(userID);
@@ -93,6 +71,29 @@ namespace WindowsFormsApp1
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void AvatarIcon_Click(object sender, EventArgs e)
+        {
+            if (userPanel.Visible == false) { userPanel.Visible = true; }
+            else if (userPanel.Visible == true) { userPanel.Visible = false; }
+        }
+
+        private void ProfileBtn_Click_1(object sender, EventArgs e)
+        {
+            Profile Pf = new Profile(userID);
+            addUserControl(Pf);
+            Pf.UpdateBtnClicked += StudentForm_Load;
+            userPanel.Visible = false;
+        }
+
+        private void LogOutBtn_Click_1(object sender, EventArgs e)
+        {
+            userPanel.Visible = false;
+            this.Hide();
+            LoginForm Login = new LoginForm();
+            Login.Closed += (s, args) => this.Close();
+            Login.Show();
         }
     }
 }

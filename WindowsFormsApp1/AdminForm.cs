@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.ServerCode;
 using WindowsFormsApp1.Student_UserControl;
 
 namespace WindowsFormsApp1
@@ -22,29 +23,11 @@ namespace WindowsFormsApp1
             userID = user_id;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kryptonButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kryptonDropButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void AdminForm_Load(object sender, EventArgs e)
         {
             userPanel.Visible = false;
+            ClassIcon classIcon = new ClassIcon();
+            classIcon.LoadIcon(userID, AvatarIcon);
         }
 
         private void roundPictureBox1_Click(object sender, EventArgs e)
@@ -67,6 +50,7 @@ namespace WindowsFormsApp1
         {
             Profile Pf = new Profile(userID);
             addUserControl(Pf);
+            Pf.UpdateBtnClicked += AdminForm_Load;
             userPanel.Visible = false;
         }
 
