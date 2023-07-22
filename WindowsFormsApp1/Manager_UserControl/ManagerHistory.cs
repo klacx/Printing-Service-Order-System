@@ -38,13 +38,13 @@ namespace WindowsFormsApp1.Manager_UserControl
             {
                 if (dt.Rows.Count > 0)
                 {
-                    orderLayout[] itemList = new orderLayout[dt.Rows.Count];
+                    managerHistoryLayout[] itemList = new managerHistoryLayout[dt.Rows.Count];
 
                     for (int i = 0; i < 1; i++)
                     {
                         foreach (DataRow row in dt.Rows)
                         {
-                            itemList[i] = new orderLayout();
+                            itemList[i] = new managerHistoryLayout();
 
                             itemList[i].orderId = row["order_id"].ToString();
                             itemList[i].orderDate = row["order_date"].ToString();

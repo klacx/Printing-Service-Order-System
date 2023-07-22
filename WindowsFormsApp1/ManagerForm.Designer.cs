@@ -303,7 +303,7 @@
             this.AvatarIcon.Location = new System.Drawing.Point(1210, 3);
             this.AvatarIcon.Name = "AvatarIcon";
             this.AvatarIcon.Size = new System.Drawing.Size(40, 40);
-            this.AvatarIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.AvatarIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AvatarIcon.TabIndex = 8;
             this.AvatarIcon.TabStop = false;
             this.AvatarIcon.Click += new System.EventHandler(this.roundPictureBox1_Click);

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Dynamic_Panel.Manager_Layout
 {
-    public partial class orderLayout : UserControl
+    public partial class managerHistoryLayout : UserControl
     {
-        public orderLayout()
+        public managerHistoryLayout()
         {
             InitializeComponent();
         }
@@ -108,7 +108,31 @@ namespace WindowsFormsApp1.Dynamic_Panel.Manager_Layout
             }
         }
 
+        private void print_Click(object sender, EventArgs e)
+        {
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += PrintDocument_PrintPage;
 
+            PaperSize customPaperSize = new PaperSize("CustomSize", 335, 700);
+            printDocument.DefaultPageSettings.PaperSize = customPaperSize;
+
+
+            printDocument.DefaultPageSettings.Margins = new Margins(10, 10, 10, 10);
+            PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+            printPreviewDialog.Document = printDocument;
+            printPreviewDialog.ShowDialog();
+        }
+
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Receipt receipt = new Receipt(int.Parse(_orderId));
+            using (Bitmap bitmap = new Bitmap(receipt.Width, receipt.Height))
+            {
+                receipt.DrawToBitmap(bitmap, receipt.ClientRectangle);
+
+                e.Graphics.DrawImage(bitmap, e.MarginBounds.Left, e.MarginBounds.Top);
+            }
+        }
     }
 
 

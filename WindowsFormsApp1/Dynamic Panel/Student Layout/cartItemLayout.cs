@@ -167,7 +167,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                 foreach (DataRow detail in PDT.Rows)
                 {
                     lbl_productName.Text = detail["product_name"].ToString();
-                    if (lbl_productName.Text == "Printing A4– Black and White")
+                    if (lbl_productName.Text == "Printing A4- Black and White")
                     {
                         if (Quantity <= 99)
                         {

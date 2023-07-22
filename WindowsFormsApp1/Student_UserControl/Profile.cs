@@ -22,6 +22,9 @@ namespace WindowsFormsApp1.Student_UserControl
         public List<bool> final_result = new List<bool>();
         public bool passwordChanged;
         public event EventHandler UpdateBtnClicked;
+        public string password;
+        public DateTime dob;
+        public string DateString;
         public Profile(string user_id)
 
         {
@@ -67,7 +70,6 @@ namespace WindowsFormsApp1.Student_UserControl
             public string last_name { get; set; }
             public string phone_number { get; set; }
             public string gender { get; set; }
-            public string password { get; set; }
             public DateTime? dob { get; set; }
             public byte[] userImage { get; set; }
 
@@ -145,17 +147,6 @@ namespace WindowsFormsApp1.Student_UserControl
             return userListFromUser;
         }
 
-        public bool ValidateEmailFormat(string email)
-        {
-            string pattern = @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
-            Regex regex = new Regex(pattern);
-            Match match = regex.Match(email);
-            return match.Success;
-        }
-
-        public string password;
-        public DateTime dob;
-        public string DateString;
         private void compare()
         {
             List<object> MDF = userDataFromMDF();
@@ -429,6 +420,14 @@ namespace WindowsFormsApp1.Student_UserControl
         private void Profile_Click(object sender, EventArgs e)
         {
             compare();
+        }
+
+        public bool ValidateEmailFormat(string email)
+        {
+            string pattern = @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(email);
+            return match.Success;
         }
     }
 }

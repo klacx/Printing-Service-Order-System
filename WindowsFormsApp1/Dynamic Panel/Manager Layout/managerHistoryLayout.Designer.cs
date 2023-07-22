@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Dynamic_Panel.Manager_Layout
 {
-    partial class orderLayout
+    partial class managerHistoryLayout
     {
         /// <summary> 
         /// Required designer variable.
@@ -122,8 +122,9 @@
             this.print.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.print.TabIndex = 13;
             this.print.TabStop = false;
+            this.print.Click += new System.EventHandler(this.print_Click);
             // 
-            // orderLayout
+            // managerHistoryLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,7 +137,7 @@
             this.Controls.Add(this.lbl_user);
             this.Controls.Add(this.lbl_orderDetails);
             this.Controls.Add(this.lbl_id);
-            this.Name = "orderLayout";
+            this.Name = "managerHistoryLayout";
             this.Size = new System.Drawing.Size(1225, 48);
             this.Load += new System.EventHandler(this.orderLayout_Load);
             ((System.ComponentModel.ISupportInitialize)(this.print)).EndInit();
