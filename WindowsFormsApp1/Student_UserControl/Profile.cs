@@ -16,15 +16,16 @@ namespace WindowsFormsApp1.Student_UserControl
     {
         public byte[] userImage;
         public string userID;
-        public bool imageUploaded = false;
         public string query;
+        public string password;
+        public string DateString;
         public List<bool> results = new List<bool>();
         public List<bool> final_result = new List<bool>();
+        public bool imageUploaded = false;
         public bool passwordChanged;
+        public bool dateChanged = false;
         public event EventHandler UpdateBtnClicked;
-        public string password;
         public DateTime dob;
-        public string DateString;
         public Profile(string user_id)
 
         {
@@ -36,7 +37,6 @@ namespace WindowsFormsApp1.Student_UserControl
 
         private void Profile_Load(object sender, EventArgs e)
         {
-
             List<User> userList = SyncWithDatabase();
 
             foreach (User user in userList)
@@ -61,6 +61,7 @@ namespace WindowsFormsApp1.Student_UserControl
                 emailTextBox.Text = user.email ?? string.Empty;
             }
 
+            compare();
         }
 
         public class User
@@ -234,7 +235,12 @@ namespace WindowsFormsApp1.Student_UserControl
                 {
                     final_result.Add(true);
                 }
-                else { final_result.Add(false); }
+                else 
+                {
+                    final_result.Add(false); 
+                    dateChanged = true;
+
+                }
             }
 
             if (NPTextBox.Text.Length > 0)
@@ -290,7 +296,7 @@ namespace WindowsFormsApp1.Student_UserControl
             }
             if (results[2] == false)
             {
-                query += " last_name = @last_name";
+                query += " last_name = @last_name,";
             }
             if (results[3] == false)
             {
@@ -300,6 +306,10 @@ namespace WindowsFormsApp1.Student_UserControl
             {
                 query += " gender = @gender,";
             }
+            if (dateChanged)
+            {
+                query += " dob = @dob,";
+            }
             if (imageUploaded)
             {
                 query += " user_img = @user_img,";
@@ -308,6 +318,7 @@ namespace WindowsFormsApp1.Student_UserControl
             {
                 query += " password = @password,";
             }
+            
 
             query = query.Remove(query.Length - 1);
 
@@ -336,6 +347,10 @@ namespace WindowsFormsApp1.Student_UserControl
                 if (results[4] == false)
                 {
                     cmd.Parameters.AddWithValue("@gender", genderTextBox.SelectedItem.ToString());
+                }
+                if (dateChanged)
+                {
+                    cmd.Parameters.AddWithValue("@dob", dobTimePicker.Value);
                 }
                 if (imageUploaded)
                 {
@@ -428,6 +443,16 @@ namespace WindowsFormsApp1.Student_UserControl
             Regex regex = new Regex(pattern);
             Match match = regex.Match(email);
             return match.Success;
+        }
+
+        private void dobTimePicker_CloseUp(object sender, ComponentFactory.Krypton.Toolkit.DateTimePickerCloseArgs e)
+        {
+            compare();
+        }
+
+        private void genderTextBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            compare();
         }
     }
 }

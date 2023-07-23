@@ -110,6 +110,11 @@ namespace WindowsFormsApp1.Dynamic_Panel.Manager_Layout
 
         private void print_Click(object sender, EventArgs e)
         {
+            printDocument();
+        }
+
+        public void printDocument()
+        {
             PrintDocument printDocument = new PrintDocument();
             printDocument.PrintPage += PrintDocument_PrintPage;
 
@@ -119,10 +124,10 @@ namespace WindowsFormsApp1.Dynamic_Panel.Manager_Layout
 
             printDocument.DefaultPageSettings.Margins = new Margins(10, 10, 10, 10);
             PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+            printPreviewDialog.ClientSize = new Size(400, 800);
             printPreviewDialog.Document = printDocument;
             printPreviewDialog.ShowDialog();
         }
-
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Receipt receipt = new Receipt(int.Parse(_orderId));
@@ -133,8 +138,5 @@ namespace WindowsFormsApp1.Dynamic_Panel.Manager_Layout
                 e.Graphics.DrawImage(bitmap, e.MarginBounds.Left, e.MarginBounds.Top);
             }
         }
-    }
-
-
-    
+    }  
 }

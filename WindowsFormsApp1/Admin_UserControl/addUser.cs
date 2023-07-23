@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Dynamic_Panel.Worker_Layout
+namespace WindowsFormsApp1.Admin_UserControl
 {
-    public partial class NewRequestPage : UserControl
+    public partial class addUser : UserControl
     {
-        public NewRequestPage()
+        public addUser()
         {
             InitializeComponent();
         }

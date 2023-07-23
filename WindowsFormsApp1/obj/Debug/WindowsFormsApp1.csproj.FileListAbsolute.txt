@@ -32,7 +32,7 @@ C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFor
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Manager_UserControl.ManagerHistory.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Manager_Layout.newRequestLayout.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Manager_UserControl.newRequestPage.resources
-C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Worker_Layout.NewRequestPage.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Manager_Layout.managerHistoryLayout.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Manager_Layout.receiptLayout.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Manager_Layout.Receipt.resources
+C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Admin_UserControl.addUser.resources

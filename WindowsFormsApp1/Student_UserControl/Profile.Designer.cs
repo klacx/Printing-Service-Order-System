@@ -157,6 +157,7 @@
             this.dobTimePicker.StateCommon.Content.Color1 = System.Drawing.Color.DimGray;
             this.dobTimePicker.StateCommon.Content.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dobTimePicker.TabIndex = 9;
+            this.dobTimePicker.CloseUp += new System.EventHandler<ComponentFactory.Krypton.Toolkit.DateTimePickerCloseArgs>(this.dobTimePicker_CloseUp);
             // 
             // genderTextBox
             // 
@@ -178,6 +179,7 @@
             this.genderTextBox.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genderTextBox.TabIndex = 12;
             this.genderTextBox.Text = "gender";
+            this.genderTextBox.SelectedValueChanged += new System.EventHandler(this.genderTextBox_SelectedValueChanged);
             // 
             // label5
             // 
