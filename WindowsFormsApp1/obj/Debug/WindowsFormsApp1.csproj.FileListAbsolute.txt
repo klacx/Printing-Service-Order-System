@@ -36,3 +36,5 @@ C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFor
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Manager_Layout.receiptLayout.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Manager_Layout.Receipt.resources
 C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Admin_UserControl.addUser.resources
+C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Admin_UserControl.ReportPage.resources
+C:\Users\User\source\repos\AssignmentYear1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Dynamic_Panel.Admin_Layout.resources

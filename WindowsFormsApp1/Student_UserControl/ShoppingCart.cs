@@ -21,7 +21,6 @@ namespace WindowsFormsApp1.Student_UserControl
     {
         public string userID;
         public int cartID;
-        public decimal unitPrice;
         public ShoppingCart(string user_id)
         {
             InitializeComponent();
@@ -33,7 +32,7 @@ namespace WindowsFormsApp1.Student_UserControl
             ProductUserControl();
         }
 
-        public void ProductUserControl()
+        public void ProductUserControl()              //show item in shopping cart
         {
             panelContainer.Controls.Clear();
 
@@ -49,62 +48,47 @@ namespace WindowsFormsApp1.Student_UserControl
                 cartID = int.Parse(CIDT.Rows[0]["cart_id"].ToString());
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    cartItemLayout[] itemList = new cartItemLayout[dt.Rows.Count];
-
-                    for (int i = 0; i < 1; i++)
+                    foreach (DataRow row in dt.Rows)
                     {
-                        foreach (DataRow row in dt.Rows)
+                        cartItemLayout item = new cartItemLayout();
+
+                        item.quantity =int.Parse(row["quantity"].ToString());
+
+                        SqlDataAdapter PAD = new SqlDataAdapter("SELECT * FROM Product  WHERE product_id = '" + row["product_id"] + "'", con.connect);
+                        DataTable PDT = new DataTable();
+                        PAD.Fill(PDT);
+
+                        foreach (DataRow detail in PDT.Rows)
                         {
-                            itemList[i] = new cartItemLayout();
+                            item.productName = detail["product_name"].ToString();
 
-                            itemList[i].quantity = row["quantity"].ToString();
-
-                            SqlDataAdapter PAD = new SqlDataAdapter("SELECT * FROM Product  WHERE product_id = '" + row["product_id"] + "'", con.connect);
-                            DataTable PDT = new DataTable();
-                            PAD.Fill(PDT);
-
-                            foreach (DataRow detail in PDT.Rows)
+                            if (item.productName == "Printing A4– Black and White")
                             {
-                                itemList[i].productName = detail["product_name"].ToString();
-
-                                if (itemList[i].productName == "Printing A4– Black and White")
+                                if (item.quantity <= 99)
                                 {
-                                    if (int.Parse(itemList[i].quantity) <= 99)
-                                    {
-                                        itemList[i].unitPrice = "RM " + detail["price"];
-                                        unitPrice = decimal.Parse(detail["price"].ToString());
-                                    }
-                                    else
-                                    {
-                                        itemList[i].unitPrice = "RM " + detail["special_price"];
-                                        unitPrice = decimal.Parse(detail["special_price"].ToString());
-                                    }
+                                    item.unitPrice = decimal.Parse(detail["price"].ToString());
                                 }
                                 else
                                 {
-                                    itemList[i].unitPrice = "RM " + detail["price"];
-                                    unitPrice = decimal.Parse(detail["price"].ToString());
+                                    item.unitPrice = decimal.Parse(detail["special_price"].ToString());
                                 }
-
-                                decimal unitTotalAmount = unitPrice * int.Parse(itemList[i].quantity);
-                                itemList[i].totalAmount = string.Format(new CultureInfo("en-MY"), "{0:C2}", unitTotalAmount);
-
-                                itemList[i].product_id = row["product_id"].ToString();
-
-                                itemList[i].userID = userID;
+                            }
+                            else
+                            {
+                                item.unitPrice =  decimal.Parse(detail["price"].ToString());
                             }
 
-                            panelContainer.Controls.Add(itemList[i]);
-                            
+                            item.totalAmount = item.unitPrice * item.quantity;
+
+                            item.product_id = row["product_id"].ToString();
+
+                            item.userID = userID;
                         }
-
-                    }
-
-
+                        panelContainer.Controls.Add(item);                           
+                    }                   
                 }
             }
             calculateTotal();
-
         }
 
         private void paymentBtn_Click(object sender, EventArgs e)
@@ -135,11 +119,8 @@ namespace WindowsFormsApp1.Student_UserControl
 
             ClassBLL bll1 = new ClassBLL();
             DataTable dt = bll1.getTableItems("_Order", " WHERE user_id ='" + userID + "' ORDER BY order_id DESC"); 
-            //we are here
-            int order_id = int.Parse(dt.Rows[0]["order_id"].ToString());
 
-            ClassBLL bll2 = new ClassBLL();
-            DataTable cdt = bll2.getTableItems("ShoppingCartItem", " WHERE cart_id='" + cartID + "'");
+            int order_id = int.Parse(dt.Rows[0]["order_id"].ToString());
 
             using (SqlCommand WAcmd = new SqlCommand("INSERT into WorkerAssignment(order_id) VALUES (@order_id)", con.connect))
             {
@@ -147,21 +128,28 @@ namespace WindowsFormsApp1.Student_UserControl
                 WAcmd.ExecuteNonQuery();
             }
 
+            ClassBLL bll2 = new ClassBLL();
+            DataTable cdt = bll2.getTableItems("ShoppingCartItem", " WHERE cart_id='" + cartID + "'");
+
             List<string> product_id = new List<string>();
             List<int> quantity = new List<int>();
-            foreach (DataRow row in cdt.Rows)
+            List<decimal> totalPrice = new List<decimal>();
+
+            foreach (cartItemLayout item in panelContainer.Controls)
             {
-                product_id.Add(row["product_id"].ToString());
-                quantity.Add(int.Parse(row["quantity"].ToString()));
+                product_id.Add(item.product_id);
+                quantity.Add(item.quantity);
+                totalPrice.Add(item.totalAmount);
             }
 
             for (int i = 0; i< product_id.Count; i++)
             {
-                using (SqlCommand ODcmd = new SqlCommand("INSERT into OrderDetails(order_id, product_id, quantity) VALUES (@order_id, @product_id, @quantity)", con.connect))
+                using (SqlCommand ODcmd = new SqlCommand("INSERT into OrderDetails(order_id, product_id, quantity, amount) VALUES (@order_id, @product_id, @quantity, @amount)", con.connect))
                 {   
                     ODcmd.Parameters.AddWithValue("@order_id", order_id);
                     ODcmd.Parameters.AddWithValue("@product_id", product_id[i]);
                     ODcmd.Parameters.AddWithValue("@quantity", quantity[i]);
+                    ODcmd.Parameters.AddWithValue("@amount", totalPrice[i]);
                     ODcmd.ExecuteNonQuery();
                 }
             }
@@ -179,7 +167,7 @@ namespace WindowsFormsApp1.Student_UserControl
             decimal totalAmount = 0;
             foreach (cartItemLayout item in panelContainer.Controls)
             {
-                totalAmount += decimal.Parse(item.lbl_totalAmount.Text.Replace("RM", String.Empty));
+                totalAmount += item.totalAmount;
             }
             if (urgentCheckBox.Checked)
             {

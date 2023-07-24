@@ -103,6 +103,7 @@
             this.quantityTextBox.TabIndex = 7;
             this.quantityTextBox.Text = "1";
             this.quantityTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantityTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.quantityTextBox_KeyDown);
             this.quantityTextBox.LostFocus += new System.EventHandler(this.quantityTextBox_LossFocus);
             // 
             // deleteBtn

@@ -30,13 +30,13 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 
         private void cartItemLayout_Load(object sender, EventArgs e)
         {
-
+            RefreshControl();
         }
 
         private string _productName;
-        private string _unitPrice;
-        private string _quantity;
-        private string _totalAmount;
+        private decimal _unitPrice;
+        private int _quantity;
+        private decimal _totalAmount;  
         private string _product_id;
         private string _user_id;
 
@@ -46,22 +46,23 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             set { _productName = value; lbl_productName.Text = value; }
         }
 
-        public string unitPrice
+        public decimal unitPrice
         {
             get { return _unitPrice; }
-            set { _unitPrice = value; lbl_unitPrice.Text = value; }
+            set { _unitPrice = value; lbl_unitPrice.Text = "RM " + value.ToString(); }
+
         }
 
-        public string quantity
+        public int quantity
         {
             get { return _quantity; }
-            set { _quantity = value; quantityTextBox.Text = value; }
+            set { _quantity = value; quantityTextBox.Text = value.ToString(); }
         }
 
-        public string totalAmount
+        public decimal totalAmount
         {
             get { return _totalAmount; }
-            set { _totalAmount = value; lbl_totalAmount.Text = value; }
+            set { _totalAmount = value; lbl_totalAmount.Text = string.Format(new CultureInfo("en-MY"), "{0:C2}", value); }
         }
 
         public string product_id
@@ -78,9 +79,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 
         private void DecreaseBtn_Click(object sender, EventArgs e)
         {
-            int QuantityText = int.Parse(quantityTextBox.Text);
-            QuantityText -= 1;
-            quantityTextBox.Text = QuantityText.ToString();
+            quantity -= 1;
             addCartItem(product_id, int.Parse(quantityTextBox.Text));
             if (int.Parse(quantityTextBox.Text) < 1)
             { DecreaseBtn.Enabled = false; }
@@ -107,10 +106,8 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            int QuantityText = int.Parse(quantityTextBox.Text);
-            QuantityText += 1;
-            quantityTextBox.Text = QuantityText.ToString();
-            addCartItem(product_id, int.Parse(quantityTextBox.Text));
+            quantity += 1;
+            addCartItem(product_id, quantity);
             if (int.Parse(quantityTextBox.Text) < 1)
             { DecreaseBtn.Enabled = false; }
             else
@@ -119,7 +116,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 
         private void quantityTextBox_LossFocus(object sender, EventArgs e)
         {
-            addCartItem(product_id, int.Parse(quantityTextBox.Text));
+            addCartItem(product_id, quantity);
             if (int.Parse(quantityTextBox.Text) < 1)
             { DecreaseBtn.Enabled = false; }
             else
@@ -146,8 +143,6 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 
         public void RefreshControl() 
         {
-            int Quantity = 0;
-            decimal Price = 0;
             ClassBLL bll1 = new ClassBLL();
             DataTable dt = bll1.getTableItems("ShoppingCartItem", (" WHERE product_id ='" + product_id + "'"));
 
@@ -159,35 +154,30 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    Quantity = int.Parse(row["quantity"].ToString());
-                    quantityTextBox.Text = row["quantity"].ToString();
+                    quantity = int.Parse(row["quantity"].ToString());
+                    quantity = int.Parse(row["quantity"].ToString());
                 }
                 ClassBLL bll2 = new ClassBLL();
                 DataTable PDT = bll2.getTableItems("Product", " WHERE product_id ='" + product_id + "'");
                 foreach (DataRow detail in PDT.Rows)
                 {
-                    lbl_productName.Text = detail["product_name"].ToString();
-                    if (lbl_productName.Text == "Printing A4- Black and White")
+                    productName = detail["product_name"].ToString();
+                    if (productName == "Printing A4- Black and White")
                     {
-                        if (Quantity <= 99)
+                        if (quantity <= 99)
                         {
-                            lbl_unitPrice.Text = "RM " + detail["price"];
-                            Price = decimal.Parse(detail["price"].ToString());
+                            unitPrice =  decimal.Parse(detail["price"].ToString());
                         }
                         else
                         {
-                            lbl_unitPrice.Text = "RM " + detail["special_price"].ToString();
-                            Price = decimal.Parse(detail["special_price"].ToString());
+                            unitPrice = decimal.Parse(detail["special_price"].ToString());
                         }
                     }
                     else
                     {
-                        lbl_unitPrice.Text = "RM " + detail["price"].ToString();
-                        Price = decimal.Parse(detail["price"].ToString());
+                        unitPrice = decimal.Parse(detail["price"].ToString());
                     }
-                    decimal unitTotalAmount = Price * Quantity;
-                    lbl_totalAmount.Text = string.Format(new CultureInfo("en-MY"), "{0:C2}", unitTotalAmount);
-                    
+                    totalAmount = unitPrice * quantity;     
                 }
             }
             (this.Parent).Parent.GetType().InvokeMember("calculateTotal", System.Reflection.BindingFlags.InvokeMethod, null, (this.Parent).Parent, null);
@@ -196,6 +186,15 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
         private void lbl_unitPrice_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void quantityTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            quantity = int.Parse(quantityTextBox.Text);
+            if (e.KeyCode == Keys.Enter)
+            {
+                addCartItem(product_id, quantity);
+            }
         }
     }
 }
