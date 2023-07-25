@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Admin_UserControl;
 using WindowsFormsApp1.ServerCode;
 using WindowsFormsApp1.Student_UserControl;
 
@@ -50,13 +51,14 @@ namespace WindowsFormsApp1
         {
             Profile Pf = new Profile(userID);
             addUserControl(Pf);
-            Pf.UpdateBtnClicked += AdminForm_Load;
+            Pf.UpdateBtnClicked += AdminForm_Load; //invoke by profile
             userPanel.Visible = false;
         }
 
         private void AddUserBtn_Click(object sender, EventArgs e)
         {
-
+            addUser AU = new addUser();
+            addUserControl(AU);
         }
         private void addUserControl(UserControl userControl)
         {
@@ -64,6 +66,18 @@ namespace WindowsFormsApp1
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
+        }
+
+        private void requestRptBtn_Click(object sender, EventArgs e)
+        {
+            RequestReport RP = new RequestReport();
+            addUserControl(RP);
+        }
+
+        private void incomeRptBtn_Click(object sender, EventArgs e)
+        {
+            IncomeReport IP = new IncomeReport();
+            addUserControl(IP);
         }
     }
 }

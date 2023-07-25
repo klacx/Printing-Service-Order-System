@@ -32,6 +32,11 @@ namespace WindowsFormsApp1.Student_UserControl
             ProductUserControl();
         }
 
+        internal void invokedByItem(object sender, EventArgs e)
+        {
+            calculateTotal();
+        }
+
         public void ProductUserControl()              //show item in shopping cart
         {
             panelContainer.Controls.Clear();
@@ -51,6 +56,7 @@ namespace WindowsFormsApp1.Student_UserControl
                     foreach (DataRow row in dt.Rows)
                     {
                         cartItemLayout item = new cartItemLayout();
+                        item.controlRefreshed += invokedByItem;
 
                         item.quantity =int.Parse(row["quantity"].ToString());
 

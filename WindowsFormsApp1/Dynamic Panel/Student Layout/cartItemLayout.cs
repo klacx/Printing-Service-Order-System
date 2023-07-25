@@ -23,6 +23,14 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 {
     public partial class cartItemLayout : UserControl
     {
+        private string _productName;
+        private decimal _unitPrice;
+        private int _quantity;
+        private decimal _totalAmount;
+        private string _product_id;
+        private string _user_id;
+        public event EventHandler controlRefreshed;
+
         public cartItemLayout()
         {
             InitializeComponent();
@@ -33,13 +41,6 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             RefreshControl();
         }
 
-        private string _productName;
-        private decimal _unitPrice;
-        private int _quantity;
-        private decimal _totalAmount;  
-        private string _product_id;
-        private string _user_id;
-
         public string productName
         {
             get { return _productName; }
@@ -49,7 +50,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
         public decimal unitPrice
         {
             get { return _unitPrice; }
-            set { _unitPrice = value; lbl_unitPrice.Text = "RM " + value.ToString(); }
+            set { _unitPrice = value; lbl_unitPrice.Text = string.Format(new CultureInfo("en-MY"), "{0:C2}", value); }
 
         }
 
@@ -85,6 +86,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             { DecreaseBtn.Enabled = false; }
             else
             { DecreaseBtn.Enabled = true; }
+            controlRefreshed?.Invoke(this, EventArgs.Empty);
         }
         public void addCartItem(string product_id, int quantity)
         {
@@ -112,6 +114,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             { DecreaseBtn.Enabled = false; }
             else
             { DecreaseBtn.Enabled = true; }
+            controlRefreshed?.Invoke(this, EventArgs.Empty);
         }
 
         private void quantityTextBox_LossFocus(object sender, EventArgs e)
@@ -121,6 +124,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             { DecreaseBtn.Enabled = false; }
             else
             { DecreaseBtn.Enabled = true; }
+            controlRefreshed?.Invoke(this, EventArgs.Empty);
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -138,6 +142,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                 cmd.ExecuteNonQuery();
             }
             RefreshControl();
+            controlRefreshed?.Invoke(this, EventArgs.Empty);
             this.Parent.Controls.Remove(this);
         }
 
@@ -180,7 +185,6 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                     totalAmount = unitPrice * quantity;     
                 }
             }
-            (this.Parent).Parent.GetType().InvokeMember("calculateTotal", System.Reflection.BindingFlags.InvokeMethod, null, (this.Parent).Parent, null);
         }
 
         private void lbl_unitPrice_Click(object sender, EventArgs e)
@@ -195,6 +199,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             {
                 addCartItem(product_id, quantity);
             }
+            controlRefreshed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

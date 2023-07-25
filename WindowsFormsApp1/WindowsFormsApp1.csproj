@@ -67,17 +67,35 @@
     <Compile Include="Admin_UserControl\addUser.Designer.cs">
       <DependentUpon>addUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_UserControl\ReportPage.cs">
+    <Compile Include="Admin_UserControl\IncomeReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Admin_UserControl\ReportPage.Designer.cs">
-      <DependentUpon>ReportPage.cs</DependentUpon>
+    <Compile Include="Admin_UserControl\IncomeReport.Designer.cs">
+      <DependentUpon>IncomeReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dynamic Panel\Admin Layout.cs">
+    <Compile Include="Admin_UserControl\RequestReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dynamic Panel\Admin Layout.Designer.cs">
-      <DependentUpon>Admin Layout.cs</DependentUpon>
+    <Compile Include="Admin_UserControl\RequestReport.Designer.cs">
+      <DependentUpon>RequestReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic Panel\Admin Layout\incomeLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dynamic Panel\Admin Layout\incomeLayout.Designer.cs">
+      <DependentUpon>incomeLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic Panel\Admin Layout\requestLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dynamic Panel\Admin Layout\requestLayout.Designer.cs">
+      <DependentUpon>requestLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic Panel\Admin Layout\userLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dynamic Panel\Admin Layout\userLayout.Designer.cs">
+      <DependentUpon>userLayout.cs</DependentUpon>
     </Compile>
     <Compile Include="Dynamic Panel\Manager Layout\managerHistoryLayout.cs">
       <SubType>UserControl</SubType>
@@ -208,11 +226,20 @@
     <EmbeddedResource Include="Admin_UserControl\addUser.resx">
       <DependentUpon>addUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_UserControl\ReportPage.resx">
-      <DependentUpon>ReportPage.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_UserControl\IncomeReport.resx">
+      <DependentUpon>IncomeReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dynamic Panel\Admin Layout.resx">
-      <DependentUpon>Admin Layout.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_UserControl\RequestReport.resx">
+      <DependentUpon>RequestReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic Panel\Admin Layout\incomeLayout.resx">
+      <DependentUpon>incomeLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic Panel\Admin Layout\requestLayout.resx">
+      <DependentUpon>requestLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic Panel\Admin Layout\userLayout.resx">
+      <DependentUpon>userLayout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dynamic Panel\Manager Layout\managerHistoryLayout.resx">
       <DependentUpon>managerHistoryLayout.cs</DependentUpon>

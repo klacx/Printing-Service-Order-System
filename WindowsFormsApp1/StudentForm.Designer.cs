@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.AvatarIcon = new WindowsFormsApp1.RoundPictureBox();
             this.cartBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.productBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.historyBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -41,11 +40,12 @@
             this.userPanel = new System.Windows.Forms.Panel();
             this.LogOutBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.ProfileBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.AvatarIcon = new WindowsFormsApp1.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.userPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -87,17 +87,6 @@
             this.kryptonPanel1.StateNormal.Color1 = System.Drawing.Color.White;
             this.kryptonPanel1.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.kryptonPanel1.TabIndex = 2;
-            // 
-            // AvatarIcon
-            // 
-            this.AvatarIcon.Image = global::WindowsFormsApp1.Properties.Resources.photo_1603366615917_1fa6dad5c4fa;
-            this.AvatarIcon.Location = new System.Drawing.Point(1210, 3);
-            this.AvatarIcon.Name = "AvatarIcon";
-            this.AvatarIcon.Size = new System.Drawing.Size(40, 40);
-            this.AvatarIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.AvatarIcon.TabIndex = 10;
-            this.AvatarIcon.TabStop = false;
-            this.AvatarIcon.Click += new System.EventHandler(this.AvatarIcon_Click);
             // 
             // cartBtn
             // 
@@ -310,6 +299,17 @@
             this.ProfileBtn.Values.Text = "Profile";
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click_1);
             // 
+            // AvatarIcon
+            // 
+            this.AvatarIcon.Image = global::WindowsFormsApp1.Properties.Resources.photo_1603366615917_1fa6dad5c4fa;
+            this.AvatarIcon.Location = new System.Drawing.Point(1210, 3);
+            this.AvatarIcon.Name = "AvatarIcon";
+            this.AvatarIcon.Size = new System.Drawing.Size(40, 40);
+            this.AvatarIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AvatarIcon.TabIndex = 10;
+            this.AvatarIcon.TabStop = false;
+            this.AvatarIcon.Click += new System.EventHandler(this.AvatarIcon_Click);
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,9 +330,9 @@
             this.Load += new System.EventHandler(this.StudentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AvatarIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.userPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
