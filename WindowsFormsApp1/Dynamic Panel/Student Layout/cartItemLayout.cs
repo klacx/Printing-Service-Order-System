@@ -185,6 +185,11 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                     totalAmount = unitPrice * quantity;     
                 }
             }
+
+            if (int.Parse(quantityTextBox.Text) < 1)
+            { DecreaseBtn.Enabled = false; }
+            else
+            { DecreaseBtn.Enabled = true; }
         }
 
         private void lbl_unitPrice_Click(object sender, EventArgs e)
