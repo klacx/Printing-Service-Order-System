@@ -35,42 +35,36 @@ namespace WindowsFormsApp1.Manager_UserControl
 
             if (dt.Rows.Count > 0)
             {
-               paymentLayout[] itemList = new paymentLayout[dt.Rows.Count];
 
-                for (int i = 0; i < 1; i++)
+                foreach (DataRow row in dt.Rows)
                 {
-                    foreach (DataRow row in dt.Rows)
+                    paymentLayout item = new paymentLayout();
+
+                    item.orderId = row["order_id"].ToString();
+                    item.totalAmount = "RM " + row["total_amount"].ToString();
+                    item.orderDate = row["order_date"].ToString();
+                    item.urgent = bool.Parse(row["urgent"].ToString());
+
+                    Connection con = new Connection();
+                    SqlDataAdapter SDA = new SqlDataAdapter("SELECT * FROM OrderDetails  WHERE order_id = '" + item.orderId + "'", con.connect);
+                    DataTable ODT = new DataTable();
+                    SDA.Fill(ODT);
+                    foreach (DataRow detail in ODT.Rows)
                     {
-                        itemList[i] = new paymentLayout();
-
-                        itemList[i].orderId = row["order_id"].ToString();
-                        itemList[i].totalAmount = "RM " + row["total_amount"].ToString();
-                        itemList[i].orderDate = row["order_date"].ToString();
-                        itemList[i].urgent = bool.Parse(row["urgent"].ToString());
-
-                        Connection con = new Connection();
-                        SqlDataAdapter SDA = new SqlDataAdapter("SELECT * FROM OrderDetails  WHERE order_id = '" + itemList[i].orderId + "'", con.connect);
-                        DataTable ODT = new DataTable();
-                        SDA.Fill(ODT);
-                        foreach (DataRow detail in ODT.Rows)
+                        SqlDataAdapter Name = new SqlDataAdapter("SELECT product_name FROM Product  WHERE product_id = '" + detail["product_id"] + "'", con.connect);
+                        DataTable NDT = new DataTable();
+                        Name.Fill(NDT);
+                        foreach (DataRow name in NDT.Rows)
                         {
-                            SqlDataAdapter Name = new SqlDataAdapter("SELECT product_name FROM Product  WHERE product_id = '" + detail["product_id"] + "'", con.connect);
-                            DataTable NDT = new DataTable();
-                            Name.Fill(NDT);
-                            foreach (DataRow name in NDT.Rows)
-                            {
-                                string productName = name["product_name"].ToString();
-                                itemList[i].orderDetails = itemList[i].orderDetails + productName + " * " + detail["quantity"] + "\n";
-                                itemList[i].Height += 15;
-                            }
+                            string productName = name["product_name"].ToString();
+                            item.orderDetails = item.orderDetails + productName + " * " + detail["quantity"] + "\n";
+                            item.Height += 15;
                         }
-
-                        panelContainer.Controls.Add(itemList[i]);
-
                     }
+
+                    panelContainer.Controls.Add(item);
                 }
             }
-
         }
     }
 }

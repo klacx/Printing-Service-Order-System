@@ -42,23 +42,19 @@ namespace WindowsFormsApp1.Student_UserControl
             {
                 if (dt.Rows.Count > 0)
                 {
-                    studentHistoryLayout[] itemList = new studentHistoryLayout[dt.Rows.Count];
-
-                    for (int i = 0; i < 1; i++)
-                    {
                         foreach (DataRow row in dt.Rows)
                         {
-                            itemList[i] = new studentHistoryLayout();
+                            studentHistoryLayout item = new studentHistoryLayout();
 
-                            itemList[i].orderId = row["order_id"].ToString();
-                            itemList[i].totalAmount = "RM " + row["total_amount"].ToString();
-                            itemList[i].orderDate = row["order_date"].ToString();
-                            itemList[i].orderStatus = row["order_status"].ToString();
-                            itemList[i].urgent = bool.Parse(row["urgent"].ToString());
+                            item.orderId = row["order_id"].ToString();
+                            item.totalAmount = "RM " + row["total_amount"].ToString();
+                            item.orderDate = row["order_date"].ToString();
+                            item.orderStatus = row["order_status"].ToString();
+                            item.urgent = bool.Parse(row["urgent"].ToString());
 
 
 
-                            SqlDataAdapter SDA = new SqlDataAdapter("SELECT * FROM OrderDetails  WHERE order_id = '" + itemList[i].orderId + "'", con.connect);
+                            SqlDataAdapter SDA = new SqlDataAdapter("SELECT * FROM OrderDetails  WHERE order_id = '" + item.orderId + "'", con.connect);
                             DataTable ODT = new DataTable();
                             SDA.Fill(ODT);
                             foreach (DataRow detail in ODT.Rows)
@@ -69,22 +65,14 @@ namespace WindowsFormsApp1.Student_UserControl
                                 foreach (DataRow name in NDT.Rows)
                                 {
                                     string productName = name["product_name"].ToString();
-                                    itemList[i].orderDetails = itemList[i].orderDetails + productName + " * " + detail["quantity"] + "\n";
-                                    itemList[i].Height += 15;
-
-                                    // need new condition > data table name
+                                    item.orderDetails = item.orderDetails + productName + " * " + detail["quantity"] + "\n";
+                                    item.Height += 15;
                                 }
-
-                                // need new condition > data table name
                             }
-
-                            panelContainer.Controls.Add(itemList[i]);
-
+                            panelContainer.Controls.Add(item);
                         }
-                    }
+                    
                 }
-
-
             }
         }
     }

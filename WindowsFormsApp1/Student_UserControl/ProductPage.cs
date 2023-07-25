@@ -37,39 +37,31 @@ namespace WindowsFormsApp1.Student_UserControl
 
             DataTable dt = objBLL.getTableItems("product", "");
 
-            if(dt != null && dt.Rows.Count > 0 ) 
+            if (dt != null && dt.Rows.Count > 0)
             {
-                    productLayout[] itemList = new productLayout[dt.Rows.Count];
+                foreach (DataRow row in dt.Rows)
+                {
+                    productLayout item = new productLayout(userID);
 
-                    for (int i = 0; i <1; i++)
+                    try
                     {
-                        foreach(DataRow row in dt.Rows) 
-                        {
-                            itemList[i] = new productLayout(userID);
-
-                            try
-                            {
-                                MemoryStream ms = new MemoryStream((byte[])row["product_img"]);
-                                itemList[i].Icon = new Bitmap(ms);
-                            }
-                            catch { itemList[i].Icon = Resources.NoImage; }
-
-
-                            itemList[i].Title = row["product_name"].ToString();
-                            itemList[i].Price = "RM " + row["price"].ToString() + "/per unit";
-                            itemList[i].SpecialPrice = "RM " + row["special_price"].ToString() + "/per 100 unit";
-                            if(row["price"].ToString().Replace(" ", String.Empty) == row["special_price"].ToString().Replace(" ", String.Empty))
-                            { itemList[i].lbl_specialPrice.Visible = false; }
-                            itemList[i].product_id = row["product_id"].ToString();
-
-                            panelContainer.Controls.Add(itemList[i]);
-
-
-                        }
+                        MemoryStream ms = new MemoryStream((byte[])row["product_img"]);
+                        item.Icon = new Bitmap(ms);
                     }
-                
-                
-            
+                    catch { item.Icon = Resources.NoImage; }
+
+
+                    item.Title = row["product_name"].ToString();
+                    item.Price = "RM " + row["price"].ToString() + "/per unit";
+                    item.SpecialPrice = "RM " + row["special_price"].ToString() + "/per 100 unit";
+                    if (row["price"].ToString().Replace(" ", String.Empty) == row["special_price"].ToString().Replace(" ", String.Empty))
+                    { item.lbl_specialPrice.Visible = false; }
+                    item.product_id = row["product_id"].ToString();
+
+                    panelContainer.Controls.Add(item);
+
+
+                }
             }
         }
 

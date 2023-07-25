@@ -36,48 +36,41 @@ namespace WindowsFormsApp1.Manager_UserControl
             {
                 if (dt.Rows.Count > 0)
                 {
-                    newRequestLayout[] itemList = new newRequestLayout[dt.Rows.Count];
-
-                    for (int i = 0; i < 1; i++)
+                    foreach (DataRow row in dt.Rows)
                     {
-                        foreach (DataRow row in dt.Rows)
+                        newRequestLayout item = new newRequestLayout();
+
+                        item.orderId = row["order_id"].ToString();
+                        item.totalAmount = "RM" + row["total_amount"].ToString();
+                        item.urgent = bool.Parse(row["urgent"].ToString());
+                        item.userID = row["user_id"].ToString();
+
+                        ClassBLL bll2 = new ClassBLL();
+                        DataTable ODT = bll2.getTableItems("OrderDetails", " WHERE order_id='" + item.orderId + "'");
+                        foreach (DataRow detail in ODT.Rows)
                         {
-                            itemList[i] = new newRequestLayout();
-
-                            itemList[i].orderId = row["order_id"].ToString();
-                            itemList[i].totalAmount = "RM" + row["total_amount"].ToString();
-                            itemList[i].urgent = bool.Parse(row["urgent"].ToString());
-                            itemList[i].userID = row["user_id"].ToString();
-
-                            ClassBLL bll2 = new ClassBLL();
-                            DataTable ODT = bll2.getTableItems("OrderDetails", " WHERE order_id='" + itemList[i].orderId + "'");
-                            foreach (DataRow detail in ODT.Rows)
+                            SqlDataAdapter Name = new SqlDataAdapter("SELECT product_name FROM Product  WHERE product_id = '" + detail["product_id"] + "'", con.connect);
+                            DataTable NDT = new DataTable();
+                            Name.Fill(NDT);
+                            foreach (DataRow name in NDT.Rows)
                             {
-                                SqlDataAdapter Name = new SqlDataAdapter("SELECT product_name FROM Product  WHERE product_id = '" + detail["product_id"] + "'", con.connect);
-                                DataTable NDT = new DataTable();
-                                Name.Fill(NDT);
-                                foreach (DataRow name in NDT.Rows)
-                                {
-                                    string productName = name["product_name"].ToString();
-                                    itemList[i].orderDetails = itemList[i].orderDetails + productName + " * " + detail["quantity"] + "\n";
-                                    itemList[i].Height += 15;
-                                }
+                                string productName = name["product_name"].ToString();
+                                item.orderDetails = item.orderDetails + productName + " * " + detail["quantity"] + "\n";
+                                item.Height += 15;
                             }
-
-                            ClassBLL bll3 = new ClassBLL();
-                            DataTable worker_id = bll3.getTableItems("_User", " WHERE roles = 'worker'");
-                            foreach (DataRow worker in worker_id.Rows)
-                            {
-                                itemList[i].workerComboBox.Items.Add(worker["user_id"].ToString());
-                            }
-
-                            panelContainer.Controls.Add(itemList[i]);
-
                         }
+
+                        ClassBLL bll3 = new ClassBLL();
+                        DataTable worker_id = bll3.getTableItems("_User", " WHERE roles = 'worker'");
+                        foreach (DataRow worker in worker_id.Rows)
+                        {
+                            item.workerComboBox.Items.Add(worker["user_id"].ToString());
+                        }
+
+                        panelContainer.Controls.Add(item);
+
                     }
                 }
-
-
             }
         }
     }

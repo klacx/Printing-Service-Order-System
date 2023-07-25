@@ -38,50 +38,42 @@ namespace WindowsFormsApp1.Manager_UserControl
             {
                 if (dt.Rows.Count > 0)
                 {
-                    managerHistoryLayout[] itemList = new managerHistoryLayout[dt.Rows.Count];
-
-                    for (int i = 0; i < 1; i++)
+                    foreach (DataRow row in dt.Rows)
                     {
-                        foreach (DataRow row in dt.Rows)
+                        managerHistoryLayout item = new managerHistoryLayout();
+
+                        item.orderId = row["order_id"].ToString();
+                        item.orderDate = row["order_date"].ToString();
+                        item.orderStatus = row["order_status"].ToString();
+                        item.urgent = bool.Parse(row["urgent"].ToString());
+                        item.userID = row["user_id"].ToString();
+                        item.payment = bool.Parse(row["payment"].ToString());
+
+                        ClassBLL bll2 = new ClassBLL();
+                        DataTable worker = bll2.getTableItems("WorkerAssignment", " WHERE order_id='" + item.orderId + "'");
+                        if (worker.Rows[0]["user_id"].ToString().Replace(" ", String.Empty).Length != 0)
+                        { item.workerID = worker.Rows[0]["user_id"].ToString(); }
+                        else
+                        { item.workerID = "-"; }
+
+                        ClassBLL bll3 = new ClassBLL();
+                        DataTable ODT = bll3.getTableItems("OrderDetails", " WHERE order_id='" + item.orderId + "'");
+                        foreach (DataRow detail in ODT.Rows)
                         {
-                            itemList[i] = new managerHistoryLayout();
-
-                            itemList[i].orderId = row["order_id"].ToString();
-                            itemList[i].orderDate = row["order_date"].ToString();
-                            itemList[i].orderStatus = row["order_status"].ToString();
-                            itemList[i].urgent = bool.Parse(row["urgent"].ToString());
-                            itemList[i].userID = row["user_id"].ToString();
-                            itemList[i].payment = bool.Parse(row["payment"].ToString());
-
-                            ClassBLL bll2 = new ClassBLL();
-                            DataTable worker = bll2.getTableItems("WorkerAssignment", " WHERE order_id='" + itemList[i].orderId + "'");
-                            if (worker.Rows[0]["user_id"].ToString().Replace(" ", String.Empty).Length != 0) 
-                            { itemList[i].workerID = worker.Rows[0]["user_id"].ToString(); }
-                            else
-                            { itemList[i].workerID = "-"; }
-
-                            ClassBLL bll3 = new ClassBLL();
-                            DataTable ODT = bll3.getTableItems("OrderDetails", " WHERE order_id='" + itemList[i].orderId + "'");
-                            foreach (DataRow detail in ODT.Rows)
+                            SqlDataAdapter Name = new SqlDataAdapter("SELECT product_name FROM Product  WHERE product_id = '" + detail["product_id"] + "'", con.connect);
+                            DataTable NDT = new DataTable();
+                            Name.Fill(NDT);
+                            foreach (DataRow name in NDT.Rows)
                             {
-                                SqlDataAdapter Name = new SqlDataAdapter("SELECT product_name FROM Product  WHERE product_id = '" + detail["product_id"] + "'", con.connect);
-                                DataTable NDT = new DataTable();
-                                Name.Fill(NDT);
-                                foreach (DataRow name in NDT.Rows)
-                                {
-                                    string productName = name["product_name"].ToString();
-                                    itemList[i].orderDetails = itemList[i].orderDetails + productName + " * " + detail["quantity"] + "\n";
-                                    itemList[i].Height += 15;
-                                }
+                                string productName = name["product_name"].ToString();
+                                item.orderDetails = item.orderDetails + productName + " * " + detail["quantity"] + "\n";
+                                item.Height += 15;
                             }
-
-                            panelContainer.Controls.Add(itemList[i]);
-
                         }
+                        panelContainer.Controls.Add(item);
+
                     }
-                }
-
-
+                }                
             }
         }
     }
