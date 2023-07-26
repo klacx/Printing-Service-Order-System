@@ -102,8 +102,6 @@ namespace WindowsFormsApp1.Admin_UserControl
             requestChart.Series["Sales"].Points.DataBindXY(productName, requestAmount);
             requestChart.Series["Sales"].ChartType = SeriesChartType.Pie;
             requestChart.Series["Sales"]["PieLabelStyle"] = "Outside";
-            requestChart.Series["Sales"].IsValueShownAsLabel = true;
-            requestChart.Series["Sales"].LabelFormat = "{#}%";
 
             lbl_totalRequest.Text = totalRequest.ToString();
         }

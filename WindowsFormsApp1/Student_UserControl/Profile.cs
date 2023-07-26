@@ -437,14 +437,6 @@ namespace WindowsFormsApp1.Student_UserControl
             compare();
         }
 
-        public bool ValidateEmailFormat(string email)
-        {
-            string pattern = @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
-            Regex regex = new Regex(pattern);
-            Match match = regex.Match(email);
-            return match.Success;
-        }
-
         private void dobTimePicker_CloseUp(object sender, ComponentFactory.Krypton.Toolkit.DateTimePickerCloseArgs e)
         {
             compare();

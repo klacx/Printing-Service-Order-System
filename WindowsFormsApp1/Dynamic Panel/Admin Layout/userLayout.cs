@@ -125,8 +125,9 @@ namespace WindowsFormsApp1.Dynamic_Panel.Admin_Layout
                     cmd.Parameters.AddWithValue("@user_id", userID);
                     cmd.ExecuteNonQuery();
                 }
+                this.Parent.Controls.Remove(this);
             }
-            this.Parent.Controls.Remove(this);
+            
         }
 
         private void passwordTextBox_KeyUp(object sender, KeyEventArgs e)

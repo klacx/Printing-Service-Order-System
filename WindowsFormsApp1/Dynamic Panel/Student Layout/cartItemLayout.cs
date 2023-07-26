@@ -119,12 +119,17 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 
         private void quantityTextBox_LossFocus(object sender, EventArgs e)
         {
-            addCartItem(product_id, quantity);
-            if (int.Parse(quantityTextBox.Text) < 1)
-            { DecreaseBtn.Enabled = false; }
+            bool check = quantityTextBox.Text.Any(c => char.IsLetter(c));
+            if (quantityTextBox.Text.Length > 1 && !check)
+            {
+                quantity = int.Parse(quantityTextBox.Text);
+                addCartItem(product_id, quantity);
+                controlRefreshed?.Invoke(this, EventArgs.Empty);
+            }
             else
-            { DecreaseBtn.Enabled = true; }
-            controlRefreshed?.Invoke(this, EventArgs.Empty);
+            {
+                quantityTextBox.Text = "0";
+            }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -159,7 +164,6 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    quantity = int.Parse(row["quantity"].ToString());
                     quantity = int.Parse(row["quantity"].ToString());
                 }
                 ClassBLL bll2 = new ClassBLL();
@@ -199,12 +203,16 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
 
         private void quantityTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            quantity = int.Parse(quantityTextBox.Text);
-            if (e.KeyCode == Keys.Enter)
+            bool check = quantityTextBox.Text.Any(c => char.IsLetter(c));
+            if (quantityTextBox.Text.Length > 1 && !check )
             {
+                quantity = int.Parse(quantityTextBox.Text);
                 addCartItem(product_id, quantity);
+                controlRefreshed?.Invoke(this, EventArgs.Empty);
             }
-            controlRefreshed?.Invoke(this, EventArgs.Empty);
+            else
+            {
+                quantityTextBox.Text = "0";           }
         }
     }
 }

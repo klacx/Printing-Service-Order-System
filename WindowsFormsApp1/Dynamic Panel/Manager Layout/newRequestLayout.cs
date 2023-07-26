@@ -29,7 +29,6 @@ namespace WindowsFormsApp1.Dynamic_Panel.Manager_Layout
         private string _totalAmount;
         private bool _urgent;
         private string _userID;
-        private List<string> _workerID;
 
         public string orderId
         {
@@ -64,19 +63,6 @@ namespace WindowsFormsApp1.Dynamic_Panel.Manager_Layout
                 if (value == true)
                 {
                     this.BackColor = Color.Gainsboro;
-                }
-            }
-        }
-
-        public List<string> workerID
-        {
-            get { return _workerID; }
-            set 
-            { 
-                _workerID = value; 
-                foreach (string worker in _workerID)
-                {
-                    workerComboBox.Items.Add(worker);
                 }
             }
         }
