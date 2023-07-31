@@ -91,5 +91,13 @@ namespace WindowsFormsApp1.Dynamic_Panel.Manager_Layout
 
             this.Parent.Controls.Remove(this);
         }
+
+        private void workerComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(workerComboBox.SelectedIndex!= -1)
+            {
+                assignBtn.Enabled = true;
+            }
+        }
     }
 }

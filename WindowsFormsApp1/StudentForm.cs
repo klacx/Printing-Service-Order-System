@@ -57,10 +57,6 @@ namespace WindowsFormsApp1
             addUserControl(HP);
         }
 
-        private void userPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void cartBtn_Click(object sender, EventArgs e)
         {

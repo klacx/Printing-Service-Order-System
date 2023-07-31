@@ -46,7 +46,7 @@ namespace WindowsFormsApp1.Student_UserControl
             DataTable CIDT = new DataTable();
             CIDT.Clear();
             CIAD.Fill(CIDT);
-            if (CIDT != null)
+            if (CIDT.Rows.Count>0)
             {
                 ClassBLL objBLL = new ClassBLL();
                 DataTable dt = objBLL.getTableItems("ShoppingCartItem", " WHERE cart_id ='" + CIDT.Rows[0]["cart_id"] + "'");

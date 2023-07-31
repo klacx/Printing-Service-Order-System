@@ -122,7 +122,7 @@
             this.AddUserBtn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.AddUserBtn.TabIndex = 6;
+            this.AddUserBtn.TabIndex = 0;
             this.AddUserBtn.Values.Text = "Add User";
             this.AddUserBtn.Click += new System.EventHandler(this.AddUserBtn_Click);
             // 

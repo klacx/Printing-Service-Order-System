@@ -161,6 +161,7 @@
             // 
             // genderTextBox
             // 
+            this.genderTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderTextBox.DropDownWidth = 158;
             this.genderTextBox.Items.AddRange(new object[] {
             "male",
@@ -178,7 +179,6 @@
             this.genderTextBox.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.DimGray;
             this.genderTextBox.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genderTextBox.TabIndex = 12;
-            this.genderTextBox.Text = "gender";
             this.genderTextBox.SelectedValueChanged += new System.EventHandler(this.genderTextBox_SelectedValueChanged);
             // 
             // label5

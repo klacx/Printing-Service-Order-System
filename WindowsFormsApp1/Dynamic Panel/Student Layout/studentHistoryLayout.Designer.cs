@@ -30,9 +30,9 @@
         {
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_orderDetails = new System.Windows.Forms.Label();
-            this.lbl_amount = new System.Windows.Forms.Label();
             this.lbl_orderStatus = new System.Windows.Forms.Label();
             this.lbl_orderDate = new System.Windows.Forms.Label();
+            this.lbl_amount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_id
@@ -59,17 +59,6 @@
             this.lbl_orderDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_orderDetails.Click += new System.EventHandler(this.lbl_orderDetails_Click);
             // 
-            // lbl_amount
-            // 
-            this.lbl_amount.AutoSize = true;
-            this.lbl_amount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_amount.Location = new System.Drawing.Point(525, 14);
-            this.lbl_amount.Name = "lbl_amount";
-            this.lbl_amount.Size = new System.Drawing.Size(115, 21);
-            this.lbl_amount.TabIndex = 3;
-            this.lbl_amount.Text = "total amount";
-            this.lbl_amount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lbl_orderStatus
             // 
             this.lbl_orderStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,6 +80,17 @@
             this.lbl_orderDate.Text = "order date";
             this.lbl_orderDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_orderDate.Click += new System.EventHandler(this.lbl_orderDate_Click);
+            // 
+            // lbl_amount
+            // 
+            this.lbl_amount.AutoSize = true;
+            this.lbl_amount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_amount.Location = new System.Drawing.Point(525, 14);
+            this.lbl_amount.Name = "lbl_amount";
+            this.lbl_amount.Size = new System.Drawing.Size(115, 21);
+            this.lbl_amount.TabIndex = 3;
+            this.lbl_amount.Text = "total amount";
+            this.lbl_amount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // studentHistoryLayout
             // 
@@ -114,8 +114,8 @@
 
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Label lbl_orderDetails;
-        private System.Windows.Forms.Label lbl_amount;
         private System.Windows.Forms.Label lbl_orderStatus;
         private System.Windows.Forms.Label lbl_orderDate;
+        private System.Windows.Forms.Label lbl_amount;
     }
 }

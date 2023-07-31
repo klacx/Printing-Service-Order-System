@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.ServerCode;
 using WindowsFormsApp1.Student_UserControl;
+using WindowsFormsApp1.Worker_UserControl;
 
 namespace WindowsFormsApp1
 {
@@ -19,8 +20,11 @@ namespace WindowsFormsApp1
         public WorkerForm(string user_id)
         {
             InitializeComponent();
-
             userID = user_id;
+
+            object sender = newRequestBtn;
+            EventArgs e = EventArgs.Empty;
+            requestBtn_Click(sender, e);
         }
 
         private void WorkerForm_Load(object sender, EventArgs e)
@@ -60,9 +64,22 @@ namespace WindowsFormsApp1
             userControl.BringToFront();
         }
 
-        private void kryptonButton3_Click(object sender, EventArgs e)
+        private void requestBtn_Click(object sender, EventArgs e)
         {
+            newRequest workerRequest = new newRequest(userID);
+            addUserControl(workerRequest);
+        }
 
+        private void progressingBtn_Click(object sender, EventArgs e)
+        {
+            progressingRequest progressingRequest = new progressingRequest(userID);
+            addUserControl(progressingRequest);
+        }
+
+        private void historyBtn_Click(object sender, EventArgs e)
+        {
+            workerHistory workerHistory = new workerHistory(userID);
+            addUserControl(workerHistory);
         }
     }
 }

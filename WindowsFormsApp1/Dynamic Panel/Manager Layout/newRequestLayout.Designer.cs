@@ -39,6 +39,7 @@
             // assignBtn
             // 
             this.assignBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.assignBtn.Enabled = false;
             this.assignBtn.Location = new System.Drawing.Point(1021, 13);
             this.assignBtn.Name = "assignBtn";
             this.assignBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
@@ -56,6 +57,8 @@
             this.assignBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assignBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.assignBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.assignBtn.StateDisabled.Back.Color1 = System.Drawing.Color.Gray;
+            this.assignBtn.StateDisabled.Back.Color2 = System.Drawing.Color.DarkGray;
             this.assignBtn.TabIndex = 16;
             this.assignBtn.Values.Text = "Assign";
             this.assignBtn.Click += new System.EventHandler(this.assignBtn_Click);
@@ -94,12 +97,14 @@
             // 
             // workerComboBox
             // 
+            this.workerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.workerComboBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.workerComboBox.FormattingEnabled = true;
             this.workerComboBox.Location = new System.Drawing.Point(790, 10);
             this.workerComboBox.Name = "workerComboBox";
             this.workerComboBox.Size = new System.Drawing.Size(121, 29);
             this.workerComboBox.TabIndex = 17;
+            this.workerComboBox.SelectedValueChanged += new System.EventHandler(this.workerComboBox_SelectedValueChanged);
             // 
             // lbl_user
             // 

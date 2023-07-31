@@ -17,9 +17,7 @@ namespace WindowsFormsApp1.Dynamic_Panel.Admin_Layout
     public partial class userLayout : UserControl
     {
         private string _userID;
-        private string _password;
         private string _roles;
-
         public userLayout()
         {
             InitializeComponent();

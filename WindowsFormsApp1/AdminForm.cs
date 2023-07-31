@@ -20,8 +20,12 @@ namespace WindowsFormsApp1
         public AdminForm(string user_id)
         {
             InitializeComponent();
-
             userID = user_id;
+
+
+            object sender = AddUserBtn;
+            EventArgs e = EventArgs.Empty;
+            AddUserBtn_Click(sender, e);
         }
 
         private void AdminForm_Load(object sender, EventArgs e)

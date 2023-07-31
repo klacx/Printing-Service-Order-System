@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.Admin_UserControl
         public int month;
         public int year;
         public int totalRequest;
-
+        public int totalRequestItem;
         public RequestReport()
         {
             InitializeComponent();
@@ -68,7 +68,6 @@ namespace WindowsFormsApp1.Admin_UserControl
 
             List<string> productName = new List<string>();
             List<int> requestAmount = new List<int>();
-            List<int> percentage = new List<int>();
 
             ClassBLL bll1 = new ClassBLL();
             DataTable OPT = bll1.getTableItems("Product", " ORDER BY product_id ASC");
@@ -89,12 +88,14 @@ namespace WindowsFormsApp1.Admin_UserControl
                     if (ODDT.Rows.Count > 0)
                     {
                         item.requestAmount += 1;
-                    }
+                        
+                    }                   
                 }
+
+                totalRequestItem += item.requestAmount;
 
                 productName.Add(item.productName);
                 requestAmount.Add(item.requestAmount);
-
                 panelContainer.Controls.Add(item);
             }
 
@@ -102,8 +103,10 @@ namespace WindowsFormsApp1.Admin_UserControl
             requestChart.Series["Sales"].Points.DataBindXY(productName, requestAmount);
             requestChart.Series["Sales"].ChartType = SeriesChartType.Pie;
             requestChart.Series["Sales"]["PieLabelStyle"] = "Outside";
+            requestChart.Series["Sales"].IsValueShownAsLabel = true;
 
-            lbl_totalRequest.Text = totalRequest.ToString();
+            lbl_totalOrderAmount.Text = totalRequest.ToString();
+            lbl_totalRequest.Text = totalRequestItem.ToString();
         }
     }
 }

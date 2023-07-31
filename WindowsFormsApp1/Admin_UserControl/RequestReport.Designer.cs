@@ -34,7 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbl_totalRequest = new System.Windows.Forms.Label();
+            this.lbl_totalOrderAmount = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +42,8 @@
             this.requestChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.yearComboBox = new System.Windows.Forms.ComboBox();
             this.monthComboBox = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_totalRequest = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.requestChart)).BeginInit();
             this.SuspendLayout();
@@ -76,15 +78,15 @@
             this.label3.TabIndex = 33;
             this.label3.Text = "Service";
             // 
-            // lbl_totalRequest
+            // lbl_totalOrderAmount
             // 
-            this.lbl_totalRequest.AutoSize = true;
-            this.lbl_totalRequest.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalRequest.Location = new System.Drawing.Point(901, 576);
-            this.lbl_totalRequest.Name = "lbl_totalRequest";
-            this.lbl_totalRequest.Size = new System.Drawing.Size(21, 23);
-            this.lbl_totalRequest.TabIndex = 40;
-            this.lbl_totalRequest.Text = "0";
+            this.lbl_totalOrderAmount.AutoSize = true;
+            this.lbl_totalOrderAmount.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalOrderAmount.Location = new System.Drawing.Point(901, 576);
+            this.lbl_totalOrderAmount.Name = "lbl_totalOrderAmount";
+            this.lbl_totalOrderAmount.Size = new System.Drawing.Size(21, 23);
+            this.lbl_totalOrderAmount.TabIndex = 40;
+            this.lbl_totalOrderAmount.Text = "0";
             // 
             // panelContainer
             // 
@@ -158,12 +160,34 @@
             this.monthComboBox.Size = new System.Drawing.Size(121, 29);
             this.monthComboBox.TabIndex = 33;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(982, 576);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(183, 23);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Total Request Item:";
+            // 
+            // lbl_totalRequest
+            // 
+            this.lbl_totalRequest.AutoSize = true;
+            this.lbl_totalRequest.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalRequest.Location = new System.Drawing.Point(1172, 576);
+            this.lbl_totalRequest.Name = "lbl_totalRequest";
+            this.lbl_totalRequest.Size = new System.Drawing.Size(21, 23);
+            this.lbl_totalRequest.TabIndex = 43;
+            this.lbl_totalRequest.Text = "0";
+            // 
             // RequestReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_totalRequest);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lbl_totalOrderAmount);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
@@ -187,7 +211,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_totalRequest;
+        private System.Windows.Forms.Label lbl_totalOrderAmount;
         private System.Windows.Forms.FlowLayoutPanel panelContainer;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
@@ -195,5 +219,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart requestChart;
         public System.Windows.Forms.ComboBox yearComboBox;
         public System.Windows.Forms.ComboBox monthComboBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_totalRequest;
     }
 }
