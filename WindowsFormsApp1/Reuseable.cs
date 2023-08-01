@@ -10,14 +10,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static WindowsFormsApp1.Student_UserControl.Profile;
 using WindowsFormsApp1.Properties;
+using System.Runtime.Remoting.Contexts;
+using System.Windows.Markup;
 
 namespace WindowsFormsApp1.ServerCode
 {
     internal class Connection
     {
-        public SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Downloads\AssignmentYear1\WindowsFormsApp1\demoDatabase.mdf;Integrated Security=True;Connect Timeout=30; Max Pool Size=2000");
+        public SqlConnection connect = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\User\Desktop\clone\WindowsFormsApp1\demoDatabase.mdf;Integrated Security = True; Connect Timeout = 30; Max Pool Size=2000");
     }
-
     class classDAL
     {
         public DataTable ReadItemsTable(string tableName, string condition)

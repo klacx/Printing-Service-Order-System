@@ -180,7 +180,16 @@ namespace WindowsFormsApp1.Student_UserControl
                 totalAmount += (totalAmount / 100 * 30);
             }
             lbl_total.Text = string.Format(new CultureInfo("en-MY"), "{0:C2}", totalAmount);
-            return totalAmount;
+
+            if (totalAmount < 1)
+            {
+                proceedBtn.Enabled = false;
+            }
+            else
+            {
+                proceedBtn.Enabled = true;
+            }
+            return totalAmount;          
         }
 
         private void label_Click(object sender, EventArgs e)

@@ -39,7 +39,7 @@
             this.lbl_totalAmount.Name = "lbl_totalAmount";
             this.lbl_totalAmount.Size = new System.Drawing.Size(148, 21);
             this.lbl_totalAmount.TabIndex = 28;
-            this.lbl_totalAmount.Text = "Total Amount";
+            this.lbl_totalAmount.Text = "RM0.00";
             this.lbl_totalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_productName

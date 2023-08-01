@@ -31,7 +31,7 @@
             this.panelContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.urgentCheckBox = new System.Windows.Forms.CheckBox();
-            this.paymentBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.proceedBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lbl_total = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,7 +57,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.urgentCheckBox);
-            this.panel1.Controls.Add(this.paymentBtn);
+            this.panel1.Controls.Add(this.proceedBtn);
             this.panel1.Controls.Add(this.lbl_total);
             this.panel1.Controls.Add(this.label);
             this.panel1.Location = new System.Drawing.Point(0, 565);
@@ -77,30 +77,32 @@
             this.urgentCheckBox.UseVisualStyleBackColor = true;
             this.urgentCheckBox.CheckedChanged += new System.EventHandler(this.urgentCheckBox_CheckedChanged);
             // 
-            // paymentBtn
+            // proceedBtn
             // 
-            this.paymentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.paymentBtn.Location = new System.Drawing.Point(1111, 12);
-            this.paymentBtn.Name = "paymentBtn";
-            this.paymentBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
-            this.paymentBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.paymentBtn.OverrideDefault.Back.ColorAngle = 45F;
-            this.paymentBtn.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
-            this.paymentBtn.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.paymentBtn.OverrideFocus.Back.ColorAngle = 45F;
-            this.paymentBtn.Size = new System.Drawing.Size(135, 39);
-            this.paymentBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
-            this.paymentBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.paymentBtn.StateCommon.Back.ColorAngle = 45F;
-            this.paymentBtn.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
-            this.paymentBtn.StateCommon.Border.Rounding = 5;
-            this.paymentBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.paymentBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.paymentBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.paymentBtn.TabIndex = 9;
-            this.paymentBtn.Values.Text = "Proceed to Payment";
-            this.paymentBtn.Click += new System.EventHandler(this.paymentBtn_Click);
+            this.proceedBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.proceedBtn.Location = new System.Drawing.Point(1111, 12);
+            this.proceedBtn.Name = "proceedBtn";
+            this.proceedBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.proceedBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.proceedBtn.OverrideDefault.Back.ColorAngle = 45F;
+            this.proceedBtn.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.proceedBtn.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.proceedBtn.OverrideFocus.Back.ColorAngle = 45F;
+            this.proceedBtn.Size = new System.Drawing.Size(135, 39);
+            this.proceedBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(145)))), ((int)(((byte)(254)))));
+            this.proceedBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
+            this.proceedBtn.StateCommon.Back.ColorAngle = 45F;
+            this.proceedBtn.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.proceedBtn.StateCommon.Border.Rounding = 5;
+            this.proceedBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.proceedBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proceedBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.proceedBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.proceedBtn.StateDisabled.Back.Color1 = System.Drawing.Color.Gray;
+            this.proceedBtn.StateDisabled.Back.Color2 = System.Drawing.Color.DarkGray;
+            this.proceedBtn.TabIndex = 9;
+            this.proceedBtn.Values.Text = "Proceed Order";
+            this.proceedBtn.Click += new System.EventHandler(this.paymentBtn_Click);
             // 
             // lbl_total
             // 
@@ -236,7 +238,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.FlowLayoutPanel panelContainer;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton paymentBtn;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton proceedBtn;
         private System.Windows.Forms.CheckBox urgentCheckBox;
         private System.Windows.Forms.Label label4;
     }

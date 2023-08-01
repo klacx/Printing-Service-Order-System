@@ -91,6 +91,8 @@
             this.addBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.addBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.addBtn.StateDisabled.Back.Color1 = System.Drawing.Color.Gray;
+            this.addBtn.StateDisabled.Back.Color2 = System.Drawing.Color.DarkGray;
             this.addBtn.TabIndex = 5;
             this.addBtn.Values.Text = "+";
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
@@ -151,6 +153,8 @@
             this.DecreaseBtn.StateCommon.Content.ShortText.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.DecreaseBtn.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.DecreaseBtn.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.DecreaseBtn.StateDisabled.Back.Color1 = System.Drawing.Color.Gray;
+            this.DecreaseBtn.StateDisabled.Back.Color2 = System.Drawing.Color.DarkGray;
             this.DecreaseBtn.TabIndex = 9;
             this.DecreaseBtn.Values.Text = "-";
             this.DecreaseBtn.Click += new System.EventHandler(this.DecreaseBtn_Click);

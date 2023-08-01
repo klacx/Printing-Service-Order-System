@@ -147,8 +147,10 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                 cmd.ExecuteNonQuery();
             }
             RefreshControl();
-            controlRefreshed?.Invoke(this, EventArgs.Empty);
+
             this.Parent.Controls.Remove(this);
+            controlRefreshed?.Invoke(this, EventArgs.Empty);
+         
         }
 
         public void RefreshControl() 

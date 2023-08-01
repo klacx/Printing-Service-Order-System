@@ -39,7 +39,7 @@
             this.lbl_requestAmount.Name = "lbl_requestAmount";
             this.lbl_requestAmount.Size = new System.Drawing.Size(148, 21);
             this.lbl_requestAmount.TabIndex = 30;
-            this.lbl_requestAmount.Text = "Request Amount";
+            this.lbl_requestAmount.Text = "0";
             this.lbl_requestAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_productName
