@@ -65,6 +65,8 @@ namespace WindowsFormsApp1.Admin_UserControl
         }
         private void incomeUserControl() 
         {
+            totalIncome = 0;
+            totalAmount = 0;
             panelContainer.Controls.Clear();
             incomeChart.Series.Clear();
 
