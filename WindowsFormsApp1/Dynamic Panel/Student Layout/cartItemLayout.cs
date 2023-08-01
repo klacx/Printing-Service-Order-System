@@ -186,11 +186,6 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             { addBtn.Enabled = false; }
         }
 
-        private void quantityTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            checkQuantityTextBox();
-        }
-
         private void cartItemLayout_Click(object sender, EventArgs e)
         {
             checkQuantityTextBox();
@@ -205,20 +200,33 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
                 addCartItem(product_id, quantity);
             }
             else
-            {
-                if(int.Parse(quantityTextBox.Text) > 2000)
-                {
-                    quantityTextBox.Text = "2000";
-                }
-                else
+            {   
+                if(check)
                 {
                     quantityTextBox.Text = "0";
                 }
-                
+                else
+                {
+                    if (int.Parse(quantityTextBox.Text) > 2000)
+                    {
+                        quantityTextBox.Text = "2000";
+                        System.Windows.MessageBox.Show("Maximun quantity of an item for an order is 2000\nPlease contact staff for more information ");
+                    }
+                    else
+                    {
+                        quantityTextBox.Text = "0";
+                    }
+                }
+              
             }
 
             RefreshControl();
             controlRefreshed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void quantityTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            checkQuantityTextBox();
         }
     }
 }
