@@ -143,9 +143,12 @@ namespace WindowsFormsApp1.Student_UserControl
 
             foreach (cartItemLayout item in panelContainer.Controls)
             {
-                product_id.Add(item.product_id);
-                quantity.Add(item.quantity);
-                totalPrice.Add(item.totalAmount);
+                if(item.quantity>0)
+                {
+                    product_id.Add(item.product_id);
+                    quantity.Add(item.quantity);
+                    totalPrice.Add(item.totalAmount);
+                }              
             }
 
             for (int i = 0; i< product_id.Count; i++)

@@ -82,11 +82,8 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
         {
             quantity -= 1;
             addCartItem(product_id, int.Parse(quantityTextBox.Text));
-            if (int.Parse(quantityTextBox.Text) < 1)
-            { DecreaseBtn.Enabled = false; }
-            else
-            { DecreaseBtn.Enabled = true; }
-            controlRefreshed?.Invoke(this, EventArgs.Empty);
+            RefreshControl();
+            controlRefreshed?.Invoke(this, EventArgs.Empty);                 //<<< we invoke the parent's event here
         }
         public void addCartItem(string product_id, int quantity)
         {
@@ -110,26 +107,13 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
         {
             quantity += 1;
             addCartItem(product_id, quantity);
-            if (int.Parse(quantityTextBox.Text) < 1)
-            { DecreaseBtn.Enabled = false; }
-            else
-            { DecreaseBtn.Enabled = true; }
-            controlRefreshed?.Invoke(this, EventArgs.Empty);
+            RefreshControl();
+            controlRefreshed?.Invoke(this, EventArgs.Empty);                //<<< we invoke the parent's event here
         }
 
         private void quantityTextBox_LossFocus(object sender, EventArgs e)
         {
-            bool check = quantityTextBox.Text.Any(c => char.IsLetter(c));
-            if (quantityTextBox.Text.Length > 1 && !check)
-            {
-                quantity = int.Parse(quantityTextBox.Text);
-                addCartItem(product_id, quantity);
-                controlRefreshed?.Invoke(this, EventArgs.Empty);
-            }
-            else
-            {
-                quantityTextBox.Text = "0";
-            }
+            checkQuantityTextBox();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -149,8 +133,8 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             RefreshControl();
 
             this.Parent.Controls.Remove(this);
-            controlRefreshed?.Invoke(this, EventArgs.Empty);
-         
+            controlRefreshed?.Invoke(this, EventArgs.Empty);                 //<<< we invoke the parent's event here
+
         }
 
         public void RefreshControl() 
@@ -196,25 +180,45 @@ namespace WindowsFormsApp1.Dynamic_Panel.Product_Page
             { DecreaseBtn.Enabled = false; }
             else
             { DecreaseBtn.Enabled = true; }
-        }
-
-        private void lbl_unitPrice_Click(object sender, EventArgs e)
-        {
-
+            if (int.Parse(quantityTextBox.Text) < 2000)
+            { addBtn.Enabled = true; }
+            else
+            { addBtn.Enabled = false; }
         }
 
         private void quantityTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            bool check = quantityTextBox.Text.Any(c => char.IsLetter(c));
-            if (quantityTextBox.Text.Length > 1 && !check )
+            checkQuantityTextBox();
+        }
+
+        private void cartItemLayout_Click(object sender, EventArgs e)
+        {
+            checkQuantityTextBox();
+        }
+
+        public void checkQuantityTextBox()
+        {
+            bool check = quantityTextBox.Text.Any(c => !char.IsDigit(c));
+            if (quantityTextBox.Text.Length > 0 && !check && int.Parse(quantityTextBox.Text)<2001)
             {
                 quantity = int.Parse(quantityTextBox.Text);
                 addCartItem(product_id, quantity);
-                controlRefreshed?.Invoke(this, EventArgs.Empty);
             }
             else
             {
-                quantityTextBox.Text = "0";           }
+                if(int.Parse(quantityTextBox.Text) > 2000)
+                {
+                    quantityTextBox.Text = "2000";
+                }
+                else
+                {
+                    quantityTextBox.Text = "0";
+                }
+                
+            }
+
+            RefreshControl();
+            controlRefreshed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

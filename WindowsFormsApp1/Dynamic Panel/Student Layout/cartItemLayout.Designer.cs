@@ -58,7 +58,6 @@
             this.lbl_unitPrice.TabIndex = 2;
             this.lbl_unitPrice.Text = "label1";
             this.lbl_unitPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_unitPrice.Click += new System.EventHandler(this.lbl_unitPrice_Click);
             // 
             // lbl_totalAmount
             // 
@@ -174,6 +173,7 @@
             this.Name = "cartItemLayout";
             this.Size = new System.Drawing.Size(1144, 51);
             this.Load += new System.EventHandler(this.cartItemLayout_Load);
+            this.Click += new System.EventHandler(this.cartItemLayout_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
