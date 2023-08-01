@@ -66,6 +66,7 @@ namespace WindowsFormsApp1.Admin_UserControl
         private void incomeUserControl() 
         {
             panelContainer.Controls.Clear();
+            incomeChart.Series.Clear();
 
             ClassBLL bll1 = new ClassBLL();
             DataTable OPT = bll1.getTableItems("Product", " ORDER BY product_id ASC");

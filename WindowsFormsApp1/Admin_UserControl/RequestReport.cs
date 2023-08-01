@@ -99,6 +99,7 @@ namespace WindowsFormsApp1.Admin_UserControl
                 panelContainer.Controls.Add(item);
             }
 
+            requestChart.Series.Clear();
             requestChart.Series.Add("Sales");
             requestChart.Series["Sales"].Points.DataBindXY(productName, requestAmount);
             requestChart.Series["Sales"].ChartType = SeriesChartType.Pie;
